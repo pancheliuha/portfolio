@@ -1,0 +1,19 @@
+mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="assets/img/sprite.svg#" + name)
+
+mixin about-inform()
+	.about-img
+		img(src="assets/img/my-photo.png", alt="my-photo").logo-img-photo
+		h1.about-name Панчелюга Виктор
+		p.about-description Личный сайт веб-разработчика
+
+mixin navigation(className,items,mod)
+	nav(class=className)
+		.container
+			ul(class=className + "__list")
+				- var items = items || ["Мои работы","Обо мне","Блог","Авторизация"]
+				each nav in items
+					li(class=className + "__item")
+						a(href="#" class=".nav__link.nav__link_" + mod)= nav

@@ -1,0 +1,33 @@
+extends ../_template
+
+block variables
+	-var title= 'welcome'
+	-var navigationList= ["Мои работы","Обо мне","Блог"]
+block content
+	.wrapper
+		.container
+			.auth-button
+				a(href="#").auth-button__link Авторизоватся
+			+about-inform()
+			.socials
+				ul.socials__list
+					li.socials__item
+						a(href="#").socials__link.socials__link_vk vk
+						+icon('vk','vk_white')
+					li.socials__item
+						a(href="#").socials__link.socials__link_in in
+					li.socials__item
+						a(href="#").socials__link.socials__link_git git
+		+navigation('main',navigationList)
+		.container
+			h2.auth-text авторизуйтесь
+			.line
+			form.auth-form
+				input(type="text" placeholder="Логин" value="").auth-form__input
+				input(type="password" placeholder="Пароль" value="").auth-form__pwd
+				input(type="checkbox" id="auth-form__checkbox" value="").auth-form__checkbox
+				label(for="auth-form__checkbox")
+					span.auth-form__checkbox-text
+						|Я человек
+
+
