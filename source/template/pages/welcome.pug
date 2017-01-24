@@ -1,33 +1,66 @@
 extends ../_template
 
 block variables
-	-var title= 'welcome'
-	-var navigationList= ["Мои работы","Обо мне","Блог"]
+	- var title= 'welcome'
+	- 
+		var navigationList= {
+				"Мои работы": "/works.html", 
+				"Обо мне": "/about.html",
+				"Блог": "/blog.html"
+		}
+
 block content
-	.wrapper
-		.container
-			.auth-button
-				a(href="#").auth-button__link Авторизоватся
-			+about-inform()
-			.socials
-				ul.socials__list
-					li.socials__item
-						a(href="#").socials__link.socials__link_vk vk
-						+icon('vk','vk_white')
-					li.socials__item
-						a(href="#").socials__link.socials__link_in in
-					li.socials__item
-						a(href="#").socials__link.socials__link_git git
-		+navigation('main',navigationList)
-		.container
-			h2.auth-text авторизуйтесь
-			.line
-			form.auth-form
-				input(type="text" placeholder="Логин" value="").auth-form__input
-				input(type="password" placeholder="Пароль" value="").auth-form__pwd
-				input(type="checkbox" id="auth-form__checkbox" value="").auth-form__checkbox
-				label(for="auth-form__checkbox")
-					span.auth-form__checkbox-text
-						|Я человек
+		.wrapper
+			.content
+				header.welcome-header
+					.welcome-header__button
+						| Авторизоватся
+					
+				.flip-container
+					.about-card
+						.about-card__front
+							.about-card__front__content
+								.about-card__img
+									img(src="assets/img/my-photo.png", alt="my-photo").about-card__photo
+								h1.about-card__name Панчелюга Виктор
+								p.about-card__description Личный сайт веб-разработчика
+								.socials
+									ul.socials__list
+										li.socials__item
+											a(href="https://vk.com/vitya2806" target="_blank").socials__link.socials__link_vk vk
+												+icon('vk')
+										li.socials__item
+											a(href="https://github.com/vitya2806" target="_blank").socials__link.socials__link_git git
+												+icon('github')
+										li.socials__item
+											a(href="https://www.linkedin.com/in/victor-pancheluha-157472131?trk=hp-identity-name" target="_blank").socials__link.socials__link_in in
+												+icon('in')
+							+navigation('about-card__front__nav',navigationList)
+						.about-card__back
+							.about-card__back__content
+								h2.about-card__text авторизуйтесь
+								form.about-card__form
+									label.about-card__input-wrapper
+										input(type="text" placeholder="Логин" value="").about-card__login
+										span.fa.fa-user
+									label.about-card__input-wrapper
+										input(type="password" placeholder="Пароль" value="").about-card__pwd
+										span.fa.fa-key
+									input(type="checkbox" id="auth-form__checkbox" value="").about-card__checkbox
+									label(for="auth-form__checkbox")
+										span.about-card__form__text
+											| Я человек
+									p.about-card__question Вы точно не робот?
+									input(type="radio" id="auth-form__radio-yes" name="auth-radio").about-card__form__radio-yes
+									label(for="auth-form__radio-yes")
+										span.about-card__form__text
+											| Да
+									input(type="radio" id="auth-form__radio-no" name="auth-radio").about-card__form__radio-no
+									label(for="auth-form__radio-no")
+										span.about-card__form__text
+											| Не уверен
+							+navigation('about-card__back__nav',{"На главную":"#","Войти":"#"})
 
-
+			footer.footer
+				p.footer__content
+					| @Victor Pancheliuha

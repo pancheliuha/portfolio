@@ -1,0 +1,26 @@
+//==============
+//  variables   
+//==============
+$footer-height: 30px;
+
+
+//==============
+//  colors   
+//==============
+$black: #455a64;
+$white: #e7edef;
+$turquoise: #26c4ac;  
+$grey: #8e999f;
+$white-opacity: #fcfcfc;
+$error-color: #d22e2e;
+$focus-color: #26c4ac;;
+$valid-color: green;
+
+@import "font-awesome/font-awesome";
+@import "common/_mixins";
+@import "common/fonts";
+@import "common/extends";
+@import "common/adjustment";
+
+//styles
+@import "sections/**/*.scss"

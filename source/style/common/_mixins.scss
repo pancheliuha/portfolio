@@ -1,0 +1,30 @@
+@mixin desktop() {
+	@media screen and (max-width: 1200px) {
+		@content
+	}
+}
+
+@mixin laptop() {
+	@media screen and (max-width: 992px) {
+		@content
+	}
+}
+
+@mixin tablets() {
+	@media screen and (max-width: 768px) {
+		@content
+	}
+}
+
+@mixin phones() {
+	@media screen and (max-width: 480px) {
+		@content
+	}
+}
+
+@mixin vertical-align {
+  position: absolute;
+  top: 50%;
+  //left: 50%;
+  transform: translateY (-50%);
+}

@@ -1,0 +1,422 @@
+
+body {
+	background: url(../img/mountains.png) no-repeat ;
+	background-size: cover;
+	font-family: 'roboto_medium', sans-serif;
+
+}	
+
+//================
+//welcome-header
+//================
+.wrapper {
+	display: table;
+  	height: 100%;
+  	width: 100%;
+}
+
+
+.content {
+ 	display: table-row;
+ 	height: 100%;
+ 	text-align: center;
+ 	position: relative;
+}
+
+
+.welcome-header {
+	text-align: right;
+
+	&__button {
+		display: inline-block;
+		width: rem(177px);
+		height: rem(42px);
+		margin-right: rem(19px);
+		margin-top: rem(24px);
+		border: rem(1px) solid $white;
+		border-radius: rem(10px);
+		//background-color: rgba($white, .5);
+		text-align: center;
+		color: #fff;
+		font-size: rem(16px);
+		line-height: rem(42px);
+
+		&:hover {
+			background-color: $white;
+			color: $turquoise;
+			cursor: pointer;
+			border-color: $white;
+			transition: background-color .5s ease-out;
+
+		}
+	}
+}
+
+//================
+// welcome-front content
+//================
+
+.flip-container,
+.about-card {
+	&:hover {
+		transform: rotateY(180deg);
+	}	
+}
+
+.flip-container {
+	display: inline-block;
+	perspective: 1000;
+}
+
+.about-card {
+	margin-top: rem(130px);
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	background-color: $white-opacity;
+	border-radius: rem(15px);
+	opacity: .85;	
+	overflow: hidden;
+	text-align: center;
+	transform-style: preverse-3d;
+	transition: .5s;
+
+
+}
+
+.about-card__img {
+	margin: 0 auto;
+	width: rem(150px);
+	height: rem(150px);
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.about-card__front {
+	z-index: 2;
+	height: rem(395px);
+	width: rem(378px);
+	text-align: center;
+	position: relative;
+	backface-visibility: hidden;
+}
+
+.about-card__front__content {
+	margin-top: rem(30px);
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.about-card__photo {
+	width: 100%;
+}
+
+.about-card__name {
+	margin-bottom: 0;
+	font-size: rem(28px);
+	color: $black;
+}
+
+.about-card__description {
+	margin-top: 10px;
+	font-family: 'roboto_regular', sans-serif;
+	color: $grey;
+	font-size: rem(16px);
+}
+
+.socials {
+	
+	&__list {
+		list-style-type: none;
+		font-size: 0;
+		margin:0;
+		padding: 0;
+	}
+
+	&__item {
+		display: inline-block;
+		margin: 0 rem(15px);
+		text-align: center;
+	}
+
+	&__link {
+		text-decoration: none;
+		font-size: 0;
+		background-color: #FFF
+	}
+}
+
+.icon {
+	
+	fill: $turquoise;
+	opacity: .5;
+	&_vk {
+		width: rem(31px);
+		height: rem(22px);
+	}
+
+	&_in {
+		width: rem(24px);
+		height: rem(22px);
+	}
+	
+	&_github {
+		width: rem(26px);
+		height: rem(22px);
+	}
+
+	 &:hover {
+		opacity: 1;
+		transition: all 0.1s ; 
+	} 
+}
+
+.about-card__front__nav {
+	position: absolute;
+	bottom: 0;
+	width: rem(380px);
+	opacity: .8;
+	height: rem(44px);
+
+
+
+	&__list {
+		@extend %clearfix;
+		list-style-type: none;
+		margin:0;
+		padding: 0;
+	}
+
+	&__item {
+		background-color: rgba(#088e85, 0.72);
+		float: left;
+		text-align: center;
+		font-size: rem(16px);
+		line-height: rem(44px);
+		height: rem(44px);
+
+		&:first-child {
+			width: rem(153px);
+			border-right: rem(2px) solid rgba(#dee3e7, .5);
+		}
+
+		&:nth-child(2) {
+			width: rem(122px);
+			border-right: rem(2px) solid rgba(#dee3e7, .5);
+		}
+
+		&:last-child {
+			width: rem(101px);
+		}
+
+		&:hover {
+			background-color: rgba(17, 138, 121, 1);
+			transition: all .3s;
+		}
+	}
+
+	&__link {
+		display: block;
+		text-align: center;
+		height: 100%;
+		text-decoration: none;
+		color:#fff;
+	}
+}
+
+.about-card__front__content,
+.about-card__front__nav {
+	//opacity:1;
+}
+//====================
+// welcome-back-content
+//====================
+
+.about-card__back {
+	height: rem(395px);
+	width: rem(378px);
+	text-align: center;
+
+	position: absolute;
+	bottom:0;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+
+}
+
+.about-card__back__content {
+	text-align: center;
+}
+
+.about-card__text {
+	font-family: "bernier_regular", sans-serif;
+	font-size: rem(35px);
+	color: #455a64;
+	position: relative;
+
+	&:before {
+		content:"";
+		display: inline-block;
+		width: rem(20px);
+		height: rem(5px);
+		background-color: lighten($grey, 20%);
+		position: absolute;
+		left: 12%;
+		top: 50%;
+	}
+
+	&:after {
+		content:"";
+		display: inline-block;
+		width: rem(20px);
+		height: rem(5px);
+		background-color: lighten($grey, 20%);
+		position: absolute;
+		right: 12%;
+		top: 50%;
+	}
+}
+
+.about-card__form {
+	text-align: center;
+}
+
+.about-card__input-wrapper {
+	display: block;
+	margin: 0;
+	text-align: center;
+	height: rem(41px);
+	position: relative;
+	margin-bottom: rem(18px);
+
+}
+
+
+.about-card__login,
+.about-card__pwd {
+	display: inline-block;
+	outline:none;
+	height: 100%;
+	width: rem(284px);
+	border: none;
+	background-color: #fff;
+	opacity: 1;
+	padding-left: rem(48px);
+	border-radius: rem(5px);
+	line-height: 100%;
+	box-sizing: border-box;
+
+	
+}
+
+.fa {
+	position: absolute;
+	left:40px;
+	background-color: lighten($grey, 20%);
+	color: $grey;
+	font-size: rem(18px);
+	line-height: rem(46px);
+	width: rem(40px);
+	height: 100%;
+	border-top-left-radius: rem(5px);
+	border-bottom-left-radius: rem(5px);
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+	&:focus {
+		box-shadow: inset 0 0 1px 2px $focus-color; }
+	&.error {
+		box-shadow: inset 0 0 1px 2px $error-color; }
+	&.valid {
+		box-shadow: inset 0 0 1px 2px $valid-color; } 
+}
+
+.about-card__checkbox {
+	cursor: pointer;
+}
+
+.about-card__form__radio-yes,
+.about-card__form__radio-no {
+	cursor: pointer;
+}
+
+.about-card__form__text {
+	font-family: "roboto_regular", sans-serif;
+	color: $black;
+	cursor: pointer;
+}
+
+.about-card__question {
+	font-family: "roboto_bold", sans-serif;
+	color: $black;
+}
+
+.about-card__back__nav {
+	position: absolute;
+	bottom: 0;
+	width: rem(380px);
+	opacity: .8;
+	height: rem(44px);
+
+
+
+	&__list {
+		@extend %clearfix;
+		list-style-type: none;
+		margin:0;
+		padding: 0;
+	}
+
+		&__item {
+			background-color: rgba(#088e85, 0.72);
+			float: left;
+			text-align: center;
+			font-size: rem(16px);
+			line-height: rem(44px);
+			height: rem(44px);
+			box-sizing: border-box;
+			width: 50%;
+
+			&:first-child {
+				border-right: rem(1px) solid rgba(#dee3e7, .5);
+			}
+
+			&:last-child {
+				border-right: rem(1px) solid rgba(#dee3e7, .5);
+			}
+
+			&:hover {
+				background-color: rgba(17, 138, 121, 1);
+				transition: all .3s;
+			}
+		}
+
+			&__link {
+				display: block;
+				text-align: center;
+				height: 100%;
+				text-decoration: none;
+				color:#fff;
+			}
+	
+
+}
+
+
+
+
+
+
+
+//===============
+// footer
+//===============
+
+.footer {
+	text-align: center;
+	color: #e0e2e4;
+	font-family: 'roboto_light', sans-serif;
+}
