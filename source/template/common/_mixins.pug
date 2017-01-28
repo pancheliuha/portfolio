@@ -3,6 +3,56 @@ mixin icon(name,mod)
 	svg(class="icon icon_" + name + ' ' + mod)
 		use(xlink:href="assets/img/sprite.svg#" + name)
 
+mixin about(mod)
+	- mod = mod || ''
+	.about__img
+		img(src="assets/img/my-photo.png", alt="my-photo").about__photo
+	h1(class="about__name" + mod) Панчелюга Виктор
+	p(class="about__description" + mod) Личный сайт веб-разработчика
+
+
+
+mixin text-with-lines (text, mod)
+	h2(class="text-with-lines" + ' ' + mod)
+		| #{text}
+
+
+
+
+
+mixin social (mod,type)
+	- mod = mod || ''
+	- type = type || ''
+	.socials
+		ul.socials__list
+			li.socials__item
+				a(href="https://vk.com/vitya2806" target="_blank" class="socials__link") vk
+					+icon('vk' + type, mod)
+			li.socials__item
+				a(href="https://github.com/vitya2806" target="_blank" class="socials__link" ) github
+					+icon('github' + type,mod)
+			li.socials__item
+				a(href="https://www.linkedin.com/in/victor-pancheluha-157472131?trk=hp-identity-name" target="_blank" class="socials__link") in
+					+icon('in' + type,mod)
+
+
+
+mixin skill(techChapter, skillNames)
+	h5(class="skill__name") #{techChapter}
+	ul.skill__list
+		each skill in skillNames
+			li(class="skill__item")
+				.circle-wrap
+					svg(class="circle" + ' ' + skill)
+						circle(transform="rotate(-90)")
+						circle(transform="rotate(-90)")
+					span.circle__text
+						| #{skill}
+
+
+
+
+
 
 mixin navigation(className,items)
 	nav(class=className)
@@ -11,3 +61,4 @@ mixin navigation(className,items)
 			each href, nav in items
 				li(class=className + "__item")
 					a(href=href class=className + "__link")= nav
+

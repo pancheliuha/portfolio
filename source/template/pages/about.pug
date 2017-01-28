@@ -1,0 +1,40 @@
+extends ../_template
+
+block variables
+	- var title= 'about'
+	- var frontend= ['HTML5','CSS3','JavaScript,jQuery']
+	- var backend= ['Nodejs','Mongodb','PHP', 'noSQL']
+	- var workflow= ['GIT','Gulp','Bower', 'npm']
+
+block content
+	.wrapper
+		.content
+			include ../common/header
+			.bio-skills
+				.wrap
+					.biography
+						.biography__head
+							+text-with-lines('обо мне', 'text-with-lines_about')
+							+icon('about_header')
+						.biography__photo-wrapper
+							img(src="assets/img/about_photo.jpg", alt="my-photo").biography__photo
+						+text-with-lines('кто я', 'text-with-lines_about__info')
+						p.biography__info
+							| Я веб-разработчик из Киева. Мне 23 года. Я занимаюсь разработкой современных сайтов и приложений. 	Мне нравится делать интерестные и современные проэкты.
+						p.biography__info
+							| Этот сайт я сделал для себя, позже к нему будет добавлена админитративная часть для более удобного редактирования и добавления контента
+					
+					.skills
+						.skills__head
+							+text-with-lines('чем я могу быть', 'text-with-lines_skills')
+							h3.skills__description-head вам полезен
+						.skills__content
+							p.skills__description
+								| Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать несложные задачи на Backend. Но давайте по порядку.
+						+skill('Frontend', frontend)
+						+skill('Backend', backend)
+						+skill('Workflow', workflow)
+			.map
+				img(src="assets/img/map.png", alt="my-photo").map__photo
+		include ../common/footer
+			

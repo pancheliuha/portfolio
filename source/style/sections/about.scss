@@ -1,0 +1,189 @@
+.wrap {
+	display: table;
+}
+
+.bio-skills {
+	display: table-row;
+}
+
+.biography {
+	display: table-cell;
+	width: 50%;
+	text-align: center;
+	background-color: #f0efe9;
+}
+
+.biography__head {
+	display: inline-block;
+	width: 100%;
+	position: relative;
+}
+
+.text-with-lines_about.text-with-lines_about {
+	width: 100%;
+	color: #373e42;
+	font-size: rem(63px);
+	z-index: 1;
+	&::before {
+		   left: 26%;
+	}
+
+	&::after {
+		   right: 26%;
+	}
+}
+
+.icon_about_header.icon_about_header {
+	height: 100%;
+	width: 100%;
+	fill: #6e7171;
+	opacity: .07;
+	width:100%;
+	position: absolute;
+	bottom: 8px;
+	left: 0;
+	z-index: 0;
+
+	&:hover {
+		opacity: .07;
+	}
+}
+
+.biography__photo-wrapper {
+	display: inline-block;
+	width: 80%;
+}
+
+.biography__photo {
+	border-radius: rem(5px);
+	width: 100%;
+}
+
+.biography__info {
+	text-align: left;
+	color: #455a64;
+	padding:0 10% rem(20px);
+	padding-right: 10%;
+}
+
+.text-with-lines_about__info.text-with-lines_about__info {
+	&::before {
+		   left: 30%;
+	}
+
+	&::after {
+		   right: 30%;
+	}
+}
+
+.skills {
+	display: table-cell;
+	background-color: #efebe0;
+	height: 100%;
+}
+
+.skills__head {
+	display: inline-block;
+	width: 100%;
+	padding-top: 0px;
+
+}
+
+.text-with-lines_skills.text-with-lines_skills {
+	margin-top: rem(68px);
+
+	&::before {
+		   left: 20%;
+	}
+
+	&::after {
+		   right: 20%;
+	}
+}
+
+.skills__description-head {
+	font-family: 'bernier_regular';
+	width: 100%;
+	font-size: rem(35px);
+	color: #455a64;
+	margin-top: rem(-27px);
+	margin-bottom: 0;
+}
+
+.skills__content {
+	margin-top: rem(54px);
+}
+
+.skills__description {
+	@extend .biography__info;
+}
+
+.skill__name {
+	margin: 0;
+	font-family: 'roboto_medium';
+	font-size: rem(28px);
+	color: 455a64;
+}
+
+.skill__list {
+	list-style-type: none;
+	@extend %clearfix;
+}
+
+.skill__item {
+	float: left;
+	margin-right: rem(30px);
+	margin-bottom: rem(10px)
+}
+
+.circle-wrap {
+	position: relative;
+	display: inline-block;
+}
+
+.circle {
+	width: rem(120px);
+	height: rem(120px);
+}
+
+circle:first-child {
+	fill:rgba(0,0,0,0);
+	stroke: #dfdcd5;
+	stroke-width: rem(20px);
+	stroke-dasharray: rem(314px) rem(314px);
+	r: rem(50px);
+	cx: rem(-60px);
+	cy: rem(60px);
+}
+
+
+circle:last-child {
+	fill:rgba(0,0,0,0);
+	stroke:$turquoise;
+	stroke-width: rem(20px);
+	stroke-dasharray: rem(250px) rem(314px);
+	r: rem(50px);
+	cx: rem(-60px);
+	cy: rem(60px);
+
+}
+
+.circle__text {
+	position: absolute;
+    line-height: rem(120px);
+    top: 0;
+    left: 0;
+    width: rem(120px);
+    color: #00bfa5;
+    font-family: 'roboto_medium';
+    font-size: rem(12px);
+
+}
+
+.map {
+	width: 100%;
+}
+
+.map__photo {
+	width: 100%;
+}

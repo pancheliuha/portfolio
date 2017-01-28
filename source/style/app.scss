@@ -21,6 +21,8 @@ $valid-color: green;
 @import "common/fonts";
 @import "common/extends";
 @import "common/adjustment";
+@import "common/header";
+@import "common/footer";
 
 //styles
 @import "sections/**/*.scss"

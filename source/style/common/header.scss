@@ -1,0 +1,148 @@
+.header {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	text-align: center;
+	background: rgba(#016672, .3);
+}
+
+.header__top {
+	@extend %clearfix;
+	text-align: left;
+	line-height:100px;
+}
+
+.header__socials {
+	display: inline-block;
+}
+
+.hamburger {
+	height: rem(35px);
+	width: rem(40px);
+	float: right;
+	margin-right: rem(30px);
+	margin-top: rem(30px);
+	line-height:100px;
+	display: inline-block;
+	position: relative;
+	
+}
+
+.hamburger__top {
+	position: absolute;
+	top: 0;
+	height: rem(5px);
+	border-radius: 2px;
+	width: 100%;
+	background-color: #fff;
+}
+
+.hamburger__middle {
+	@extend .hamburger__top;
+	top: rem(35/2-2.5 + 0px);
+}
+
+.hamburger__bottom {
+	@extend .hamburger__top;
+	top: rem(30px);
+	bottom: 0;
+}
+
+.header__content {
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 30%;
+    margin: auto;
+
+}
+
+.about-card__name_white.about-card__name_white {
+	color: #fefefe;
+}
+
+.about-card__description_white {
+	color: #a6c0c7;
+}
+
+.about-card__img_bordered {
+	border: rem(2px) solid #fff;
+}
+
+.icon_white.icon_white {
+	
+	fill: #c1d6d6;
+	opacity: 1; 
+	 &:hover {
+		fill: #f0f5f5;
+		transition: all 0.2s ; 
+	} 
+}
+
+.portfolio-svg-wrap {
+	@extend .header__content;
+	width: 100%;
+
+}
+
+.icon_portfolio_header.icon_portfolio_header {
+	height: 100%;
+	width: 100%;
+	fill: #fefefe;
+	opacity: .06;
+
+	&:hover {
+		opacity: .06;
+	}
+}
+
+.header__arrow-down-wrapper {
+	width: 100%;
+	position: absolute;
+	bottom: rem(60px);
+}
+
+.icon_arrow_down.icon_arrow_down {
+	height: rem(20px);
+	width: 100%;
+	fill: #a6c0c7;
+	opacity: .7;
+
+	&:hover {
+		opacity: .7;
+	}
+}
+
+.header__foot {
+	//position: absolute;
+	bottom:0;
+}
+
+.triangle-left {
+	position: absolute;
+	bottom:0;
+	left:0;
+	margin:0;
+	padding: 0;
+	display: inline-block;
+	border: 100px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-right: 0px solid transparent;
+	border-left: 50vw solid rgba(#f0efe9, 1);
+}
+
+.triangle-right {
+	position: absolute;
+	bottom:0;
+	right:0;
+	margin:0;
+	padding: 0;
+	display: inline-block;
+	border: 100px solid transparent;
+	border-bottom: 0px solid transparent;
+	border-left: 0px solid transparent;
+	border-right: 50vw solid rgba(#efebe0, 1);
+}

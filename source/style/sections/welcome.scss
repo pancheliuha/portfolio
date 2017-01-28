@@ -64,12 +64,19 @@ body {
 }
 
 .flip-container {
+	height: rem(395px);
+	width: rem(378px);
 	display: inline-block;
 	perspective: 1000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
 .about-card {
-	margin-top: rem(130px);
 	position: relative;
 	display: inline-block;
 	vertical-align: middle;
@@ -93,7 +100,7 @@ body {
 }
 
 .about-card__front {
-	z-index: 2;
+	z-index:1;
 	height: rem(395px);
 	width: rem(378px);
 	text-align: center;
@@ -174,6 +181,8 @@ body {
 .about-card__front__nav {
 	position: absolute;
 	bottom: 0;
+	right: 0;
+	left: 0;
 	width: rem(380px);
 	opacity: .8;
 	height: rem(44px);
@@ -240,7 +249,6 @@ body {
 	position: absolute;
 	bottom:0;
 	backface-visibility: hidden;
-	transform: rotateY(180deg);
 
 }
 
@@ -248,7 +256,7 @@ body {
 	text-align: center;
 }
 
-.about-card__text {
+.text-with-lines {
 	font-family: "bernier_regular", sans-serif;
 	font-size: rem(35px);
 	color: #455a64;
@@ -415,7 +423,7 @@ textarea {
 // footer
 //===============
 
-.footer {
+.footer-min {
 	text-align: center;
 	color: #e0e2e4;
 	font-family: 'roboto_light', sans-serif;
