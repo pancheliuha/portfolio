@@ -20,16 +20,17 @@
 }
 
 .text-with-lines_about.text-with-lines_about {
-	width: 100%;
+	//width: 100%;
 	color: #373e42;
 	font-size: rem(63px);
+	display: inline-block;
 	z-index: 1;
 	&::before {
-		   left: 26%;
+		   left: -20%;
 	}
 
 	&::after {
-		   right: 26%;
+		   right: -20%;
 	}
 }
 
@@ -91,13 +92,13 @@
 
 .text-with-lines_skills.text-with-lines_skills {
 	margin-top: rem(68px);
-
+	display: inline-block;
 	&::before {
-		   left: 20%;
+		   left: -20%;
 	}
 
 	&::after {
-		   right: 20%;
+		   right: -20%;
 	}
 }
 
@@ -120,6 +121,8 @@
 
 .skill__name {
 	margin: 0;
+	text-align: left;
+	padding-left: rem(50px);
 	font-family: 'roboto_medium';
 	font-size: rem(28px);
 	color: 455a64;
@@ -182,8 +185,88 @@ circle:last-child {
 
 .map {
 	width: 100%;
+	position: relative;
+	/* text-align: center; */
+	//height: 546px;
+	//background: url('../img/map.png') repeat-y;
 }
 
 .map__photo {
+
 	width: 100%;
+}
+
+.contacts {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: inline-block;
+	background-color: rgba(#fcfcfc, .85);
+	width: rem(330px);
+	height: rem(300px);
+	margin: auto;
+	border-radius: 5px;
+
+}
+
+.contacts__head {
+
+}
+
+
+.text-with-lines_contacts.text-with-lines_contacts {
+	display: inline-block;
+	color: #373e42;
+	font-family: 'bernier_regular';
+	font-size: rem(35px);
+	&::before {
+		   left: -25%;
+	}
+
+	&::after {
+		   right: -25%;
+	}
+}
+
+.contacts__list {
+	list-style-type: none;
+	margin: 0;
+}
+
+.contacts__item {
+	margin-bottom: rem(25px);
+}
+
+.contacts__link {
+	text-decoration: none;
+}
+
+.contact__data {
+	text-align: left;
+	padding-left: 35px;
+	font-family: 'roboto_medium';
+	color: #455a64;
+	opacity: .8;
+}
+
+.contacts_icon.contacts_icon {
+	width: rem(24px);
+	height: rem(24px);
+	float: left;
+	opacity: 1;
+
+}
+
+.arrow_up-wrapper {
+	width: 100%;
+	position: absolute;
+	bottom: 22%;
+
+}
+
+.icon_arrow_up.icon_arrow_up {
+	@extend .icon_arrow_down;
+	fill: #a6c0c7;
 }

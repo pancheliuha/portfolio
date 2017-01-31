@@ -28,3 +28,18 @@
   //left: 50%;
   transform: translateY (-50%);
 }
+
+@mixin centered-flex() {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+@mixin centered-pos() {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}

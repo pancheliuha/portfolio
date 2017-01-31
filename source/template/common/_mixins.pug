@@ -45,19 +45,23 @@ mixin skill(techChapter, skillNames)
 				.circle-wrap
 					svg(class="circle" + ' ' + skill)
 						circle(transform="rotate(-90)")
-						circle(transform="rotate(-90)")
+						circle(transform="rotate(-90)" style="stroke-dasharray:250px 314px;")
 					span.circle__text
 						| #{skill}
 
-
-
+mixin slider-left(description_text, technologies_text, href)
+		.slider-inner
+			.slider__description
+				h4.slider__description-text #{description_text}
+				p.slider__technologies #{technologies_text}
+				a(href=href class="slider__link") Перейти на сайт
 
 
 
 mixin navigation(className,items)
 	nav(class=className)
 		ul(class=className + "__list")
-			- var items = items || {"Мои работы": "/works.html", "Обо мне": "/about.htm","Блог": "/blog.html", "Авторизация":"/welcome.html"}
+			- var items = items || {"Мои работы": "works.html", "Обо мне": "about.html","Блог": "blog.html", "Авторизация":"welcome.html"}
 			each href, nav in items
 				li(class=className + "__item")
 					a(href=href class=className + "__link")= nav

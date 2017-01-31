@@ -1,0 +1,64 @@
+extends ../_template
+
+block variables
+	- var title= 'works'
+	- var triangle_mod= 'triangle_mod'
+	- var header_min= 'header_min' 
+	- var header= ''
+
+block content
+	.wrapper
+		.content
+			.header-wrap
+				include ../common/header
+				.works
+					.works__head
+						+text-with-lines('мои работы', 'text-with-lines_works')
+						+icon('works_header')
+			include ../common/slider
+			section.talks
+				.talks__header
+					+text-with-lines('что обо мне говорят', 'text-with-lines_talks')
+					+icon('about_header')
+				.talks__content
+					.talks__item
+						blockquote.talks__comment
+							| Этот парень очень хорошо и качественно выполнит ваш заказ, внимателен к деталям
+						.author
+							.author__avatar-wrapper
+								img(src="assets/img/talks_max.png", alt="max_photo").author__avatar
+							p.author__name Максим Заец
+							p.author__description Друг, студент КПИ
+
+
+
+
+					.talks__item
+						blockquote.talks__comment
+							| Этот парень очень хорошо и качественно выполнит ваш заказ, внимателен к деталям
+						.author
+							.author__avatar-wrapper
+								img(src="assets/img/talks_max.png", alt="max_photo").author__avatar
+							p.author__name Максим Заец
+							p.author__description Друг, студент КПИ
+
+
+				.talks__form
+					
+					.feedback__wrapper
+						form(action="" class="feedback")
+							+text-with-lines('связаться со мной', 'text-with-lines_feedback')
+							input(type="text" placeholder="Имя" value="").feedback__name
+							input(type="email" placeholder="Email" value="").feedback__email
+							textarea(name="message", cols="15", rows="6" placeholder="Ваше сообщение" value="").feedback__message
+							.feedback__buttons
+								input(type="submit" value="Отправить").feedback__submit
+								input(type="reset" value="Очистить").feedback__reset
+						
+						
+
+				.arrow-up-wrapper
+					.arrow_up
+						+icon('arrow_up')
+				.talks__foot
+		include ../common/footer

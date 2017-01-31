@@ -1,0 +1,276 @@
+.header-wrap {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.header_min {
+	height: 78%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	background: rgba(#016672, .3);
+}
+
+.triangle_mod {
+	border-left-color: #faf8f0;
+	border-right-color: #faf8f0;
+}
+
+.works {
+	width: 100%;
+	position: absolute;
+	bottom:0;
+	height: 22%;
+}
+
+.works__head {
+	height: 100%;
+	width: 100%;
+	background-color: #faf8f0;
+	position: relative;
+}
+
+.text-with-lines_works{
+	color: #373e42;
+	font-size: rem(60px);
+	display: inline-block;
+	z-index: 1;
+	&::before {
+		   left: -20%;
+	}
+
+	&::after {
+		   right: -20%;
+	}
+}
+
+.icon_works_header.icon_works_header {
+	height: 100%;
+	width: 100%;
+	fill: #6e7171;
+	opacity: .07;
+	width:100%;
+	position: absolute;
+	bottom: 8px;
+	left: 0;
+	z-index: 0;
+
+	&:hover {
+		opacity: .07;
+	}
+}
+
+.talks {
+	background: url('../img/about-bg.png');
+	background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 2000px;
+    background-position: center top;
+	position: relative;
+}
+
+.talks__header {
+	position: relative;
+	height: rem(220px);
+}
+
+.text-with-lines_talks {
+	@extend .text-with-lines_works;
+	line-height: rem(220px);
+	margin: 0;
+}
+
+.talks__content {
+	margin-bottom: rem(80px)
+}
+
+.talks__item {
+	display: inline-block;
+	width: rem(380px);
+	text-align: left;
+
+}
+
+.talks__comment {
+	color: #455a64;
+	margin: rem(30px) 0;
+
+	&::before {
+	content: "\f10d";
+    font-family: "FontAwesome";
+    font-size: 2.25em;
+    position: relative;
+    display: block;
+    opacity: .2;
+    margin-bottom: rem(30px);
+	}
+}
+
+.author {
+	height: rem(80px);
+}
+
+.author__avatar-wrapper {
+	display: inline-block;
+	width: rem(80px);
+	height: rem(80px);
+	border-radius: 50%;
+	overflow: hidden;
+	float: left;
+	margin-right: rem(20px);
+}
+
+.author__avatar {
+	width: 100%;
+	height: 100%;
+}
+
+.author__name {
+	color: $turquoise;
+	margin: 0;
+	line-height: rem(40px);
+}
+
+.author__description {
+	font-family: 'roboto_light';
+	color: $turquoise;
+	margin: 0;
+	line-height: rem(40px);
+}
+
+
+.feedback__wrapper {
+	position: relative;
+	height: rem(392px +43px);
+	width: rem(381px);
+	z-index: 2;
+	display: inline-block;
+}
+
+.feedback {
+	
+	position: relative;
+	display: inline-block;
+	height: rem(392px);
+	width: rem(381px);
+	border-top-right-radius: rem(7px);
+	border-top-left-radius: rem(7px);
+	margin-bottom: rem(43px);
+	z-index: 2;
+	//filter: blur(5px);
+
+
+}
+
+
+.feedback__background-blur {
+	background: url('../img/about-bg.png');
+    background-repeat: no-repeat;
+    background-size: 2000px;
+    background-position: center top;
+	//filter: blur(5px);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.text-with-lines_feedback {
+	z-index: 2;
+	&::before {
+		left:5%;
+	}
+
+	&::after {
+		right:5%;
+	}
+}
+
+.feedback__name,
+.feedback__email
+ {
+	outline: none;
+	height: rem(43px);
+	background-color: #fff;
+	border-radius: rem(7px);
+	width: 84%;
+	margin-bottom: rem(15px);
+	padding-left: rem(15px);
+	border: none;
+	z-index: 2;
+}
+
+.feedback__message {
+	outline: none;
+	border-radius: rem(7px);
+	width: 80%;
+	padding: rem(15px);
+	resize: none;
+	border: none;
+
+}
+
+.feedback__buttons {
+	height: rem(43px);
+	position: absolute;
+	bottom: rem(-43px);
+	width: rem(381px);
+	border-bottom-right-radius: rem(7px);
+	border-bottom-left-radius: rem(7px);
+	overflow: hidden;
+	
+	& input:first-child {
+		border-right: 1px solid rgba(#dee3e7, .5);
+	}
+
+	& input:last-child {
+		border-left: 1px solid rgba(#dee3e7, .5);
+	}
+}
+
+.feedback__submit,
+.feedback__reset {
+ 	float: left;
+ 	display: inline-block;
+ 	height: 100%;
+	background-color: rgba(#26c9b2, .3);
+	color: #fff;
+	font-family: 'roboto_medium', sans-serif; 
+	width: 50%;
+	outline:none;
+	border: none;
+	box-sizing: border-box;
+	cursor: pointer;
+	transition: all .3s;
+
+	&:hover {
+		background-color: rgba(#26c9b2, .85);
+	}
+
+}
+
+
+.arrow-up-wrapper {
+	height: rem(158px);
+	text-align: center;
+}
+
+.arrow_up {
+	display: inline-block;
+	line-height: rem(158px);
+}
+
+.icon_arrow_up {
+	display: inline-block;
+}
+
+.talks__foot {
+	width: 100%;
+	height: rem(151px);
+}

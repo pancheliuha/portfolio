@@ -1,0 +1,26 @@
+section.slider-wrapper
+	.slider
+		.slider__first-part
+			+slider-left('лендинг независимой компании', 'html,css', '#')
+			+slider-left('лендинг независимой компании', 'html,css', '#')
+			+slider-left('лендинг независимой компании', 'html,css', '#')
+		.slider__second-part
+			.slider__project-image
+				img(src="assets/img/port1.jpg", alt="port1").project__img
+				img(src="assets/img/port2.jpg", alt="port2").project__img
+				img(src="assets/img/port3.jpg", alt="port3").project__img
+			.slider__nav
+				a(href="#").slider__nav-item.slider__nav-item_left
+					+icon('arrow_down','icon_arrow_down_centered')
+					img(src="assets/img/port1.jpg", alt="port1").project__img
+					img(src="assets/img/port2.jpg", alt="port2").project__img
+					img(src="assets/img/port3.jpg", alt="port3").project__img
+					.slider__nav-overlay-left
+						
+
+				a(href="#").slider__nav-item.slider__nav-item_left
+					+icon('arrow_up','icon_arrow_up_centered')
+					img(src="assets/img/port1.jpg", alt="port1").project__img
+					img(src="assets/img/port2.jpg", alt="port2").project__img
+					img(src="assets/img/port3.jpg", alt="port3").project__img
+					.slider__nav-overlay-left

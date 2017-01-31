@@ -1,4 +1,4 @@
-header.header.header_min
+header(class=header + ' ' + header_min)
 	.header__top
 		.header__socials
 			+social('icon_white')
@@ -16,5 +16,5 @@ header.header.header_min
 	.header__arrow-down-wrapper
 		+icon('arrow_down')
 	.header__foot
-		.triangle-left
-		.triangle-right
+		div(class="triangle-left" + ' ' + triangle_mod)
+		div(class="triangle-right" + ' ' + triangle_mod)
