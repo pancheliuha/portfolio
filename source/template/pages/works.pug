@@ -5,6 +5,7 @@ block variables
 	- var triangle_mod= 'triangle_mod'
 	- var header_min= 'header_min' 
 	- var header= ''
+	- var footer__static= ''
 
 block content
 	.wrapper
@@ -44,7 +45,6 @@ block content
 
 
 				.talks__form
-					
 					.feedback__wrapper
 						form(action="" class="feedback")
 							+text-with-lines('связаться со мной', 'text-with-lines_feedback')
@@ -57,8 +57,9 @@ block content
 						
 						
 
-				.arrow-up-wrapper
-					.arrow_up
-						+icon('arrow_up')
 				.talks__foot
+					.arrow-up-wrapper
+						.arrow_up
+							+icon('arrow_up')
+				
 		include ../common/footer

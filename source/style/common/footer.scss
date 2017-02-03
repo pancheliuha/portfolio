@@ -8,31 +8,74 @@
 }
 
 .footer__head {
-	border-bottom: 1px solid #656a6d;
+	border-bottom: 1px solid rgba(#fff, .1);
 	position: relative;
+
+	@include tablets() {
+		text-align: center;
+	}
 
 }
 
 .footer__nav {
 	display: inline-block;
 	line-height: rem(75px);
+
+	@include tablets() {
+		display: block;
+		text-align: center;
+		height: rem(75px);
+	}
 }
 
 .footer__nav__list {
 	list-style: none;
 	@extend %clearfix;
 	margin: 0;
+
+	@include tablets() {
+		display: inline-block;
+	}
+
+	@include phones() {
+		padding: 0;
+	}
 }
 
 .footer__nav__item {
 	float: left;
-	margin-right: rem(35px);
+	margin:0 rem(17px);
 }
 
 .footer__nav__link {
 	font-family: 'roboto_medium';
 	text-decoration: none;
 	color: #fff;
+	padding: 5px 0;
+	position: relative;
+	
+	&:hover::after {
+		width: 100%;
+		transition: all .3s;
+
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 50%;
+		transform: 	translateX(-50%);
+		bottom: 0;
+		height: 2px;
+		border-radius: 2px;
+		background-color: #ccc;
+		width: 0;
+		transition: all .3s;
+
+
+	}
+	
 }
 
 .footer__social {
@@ -40,6 +83,11 @@
 	position: absolute;
 	top: 23px;
 	right: 20px;
+
+	@include tablets() {
+		position: static;
+		margin-bottom: 10px;
+	}
 
 }
 .icon_rounded.icon_rounded {
@@ -55,7 +103,9 @@
 }
 
 .footer__foot {
-
+	@include tablets() {
+		text-align: center;
+	}
 }
 
 .footer__description {
@@ -65,4 +115,8 @@
 	margin: 0;
 	line-height: rem(75px);
 	padding-left: 20px;
+}
+
+.footer__static {
+	position: static;
 }

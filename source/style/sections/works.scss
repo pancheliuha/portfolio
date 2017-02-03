@@ -37,13 +37,19 @@
 	color: #373e42;
 	font-size: rem(60px);
 	display: inline-block;
+	line-height: 22vh;
+	margin: 0;
 	z-index: 1;
 	&::before {
-		   left: -20%;
+		   left: -13%;
 	}
 
 	&::after {
-		   right: -20%;
+		   right: -13%;
+	}
+
+	@include phones() {
+		font-size: rem(38px);
 	}
 }
 
@@ -70,17 +76,27 @@
     background-size: 2000px;
     background-position: center top;
 	position: relative;
+	padding-bottom: rem(151px + 158px);
 }
 
 .talks__header {
 	position: relative;
 	height: rem(220px);
+
+	@include phones() {
+		height: rem(130px);
+	}
 }
 
 .text-with-lines_talks {
 	@extend .text-with-lines_works;
 	line-height: rem(220px);
 	margin: 0;
+
+	@include phones() {
+		line-height: rem(130px);
+	}
+
 }
 
 .talks__content {
@@ -91,6 +107,11 @@
 	display: inline-block;
 	width: rem(380px);
 	text-align: left;
+
+
+	@include phones() {
+		width: 90%;
+	}
 
 }
 
@@ -271,6 +292,12 @@
 }
 
 .talks__foot {
+	position: absolute;
+	bottom: 0;
 	width: 100%;
-	height: rem(151px);
+	height: rem(151px + 158px);
+
+	@include tablets() {
+		height: rem(151px + 158px +30px);
+	}
 }

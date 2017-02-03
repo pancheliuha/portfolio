@@ -4,6 +4,10 @@
 
 .bio-skills {
 	display: table-row;
+
+	@include tablets() {
+		display: block;
+	}
 }
 
 .biography {
@@ -11,6 +15,11 @@
 	width: 50%;
 	text-align: center;
 	background-color: #f0efe9;
+
+	@include tablets() {
+		display: block;
+		width: 100%;
+	}
 }
 
 .biography__head {
@@ -32,6 +41,11 @@
 	&::after {
 		   right: -20%;
 	}
+
+	@include phones() {
+		margin: rem(17px);
+		font-size: rem(53px);
+	}
 }
 
 .icon_about_header.icon_about_header {
@@ -39,7 +53,6 @@
 	width: 100%;
 	fill: #6e7171;
 	opacity: .07;
-	width:100%;
 	position: absolute;
 	bottom: 8px;
 	left: 0;
@@ -53,11 +66,33 @@
 .biography__photo-wrapper {
 	display: inline-block;
 	width: 80%;
+	border-radius: rem(9px);
+
+	@include tablets() {
+		height: rem(400px);
+		width: 60%;
+		overflow: hidden;
+		position: relative;
+	}
+
+	@include phones() {
+		height: rem(340px);
+		width: 90%;
+	}
 }
 
 .biography__photo {
-	border-radius: rem(5px);
+	
 	width: 100%;
+
+	@include tablets() {
+
+		position: absolute;
+		left: 0;
+		right: 0;
+		
+		bottom: -13px;
+	}
 }
 
 .biography__info {
@@ -65,6 +100,19 @@
 	color: #455a64;
 	padding:0 10% rem(20px);
 	padding-right: 10%;
+
+	@include tablets() {
+		width: 60%;
+		display: inline-block;
+		margin: 0;
+	}
+	@include phones() {
+		width: 90%;
+		padding-right: 0;
+		padding-left: 0;
+		line-height: rem(20px);
+	}
+
 }
 
 .text-with-lines_about__info.text-with-lines_about__info {
@@ -81,6 +129,12 @@
 	display: table-cell;
 	background-color: #efebe0;
 	height: 100%;
+
+	@include tablets() {
+		display: block;
+		width: 100%;
+	}
+
 }
 
 .skills__head {
@@ -99,6 +153,10 @@
 
 	&::after {
 		   right: -20%;
+	}
+
+	@include tablets() {
+		margin-top: rem(30px);
 	}
 }
 
@@ -126,17 +184,44 @@
 	font-family: 'roboto_medium';
 	font-size: rem(28px);
 	color: 455a64;
+
+	@include tablets() {
+		text-align: center;
+		padding-left: 0;
+	}
 }
 
 .skill__list {
 	list-style-type: none;
 	@extend %clearfix;
+	
+	
+	@include tablets() {
+		display: inline-block;
+		padding: 0;
+	}
+
+	@include phones() {
+		max-width: 90%;
+		text-align: center;
+	}
+
 }
 
 .skill__item {
-	float: left;
-	margin-right: rem(30px);
-	margin-bottom: rem(10px)
+	display: inline-block;
+	margin-right: rem(15px);
+	margin-left: rem(15px);
+	margin-bottom: rem(10px);
+	
+	@include phones() {
+
+	}
+
+}
+
+.skill__item:last-child {
+	//margin-right: 0;
 }
 
 .circle-wrap {
@@ -187,8 +272,9 @@ circle:last-child {
 	width: 100%;
 	position: relative;
 	/* text-align: center; */
-	//height: 546px;
-	//background: url('../img/map.png') repeat-y;
+	background: url('../img/map.png');
+	height: rem(650px + 151px + 158px);
+	min-height: rem(650px);
 }
 
 .map__photo {
@@ -208,6 +294,13 @@ circle:last-child {
 	height: rem(300px);
 	margin: auto;
 	border-radius: 5px;
+	box-shadow: 0 0 10px #ccc;
+
+	@include phones() {
+		position: static;
+		width: 100%;
+		border-radius: 0;
+	}
 
 }
 
@@ -268,5 +361,15 @@ circle:last-child {
 
 .icon_arrow_up.icon_arrow_up {
 	@extend .icon_arrow_down;
-	fill: #a6c0c7;
+	fill: #ddd;
+	width: 32px;
+	opacity: .7;
+
+	&:hover {
+		fill: #fff;
+		transform: translateY(-10px);
+		transition: all .3s;
+		opacity: 1;
+		cursor: pointer;
+	}
 }
