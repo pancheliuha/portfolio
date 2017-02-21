@@ -30,7 +30,8 @@
 }
 
 .articles-wrapper {
-	padding-top: rem(70px);
+
+	background-color: #faf8f0;
 	position: relative;
 	@extend %clearfix;
 }
@@ -39,6 +40,11 @@
 	float: left;
 	height: 100vh;
 	width: 30%;
+	padding-top: rem(70px);
+	&.fixed {
+		position: fixed;
+		top: 0;
+	}
 }
 
 .aside {
@@ -53,37 +59,42 @@
 
 .aside__item {
 	text-align: right;
-	padding-right: 10px;
-	border-sizing: border-box;
-	border-right: 2px solid rgba(#00bfa5, 0);
-	transition: border-color .3s;
-	
-	&:hover {
-		border-color: rgba(#00bfa5, 1);
-		transition: border-color .3s;
-	}
 }
 
 .aside__link {
 	padding: 10px 0;
 	display: block;
-	//line-height: 25px;
 	color: #455a64;
 	text-decoration: none;
 	border-sizing: border-box;
-	transition: color .3s;
+	transition: all .3s;
+	border-right: 2px solid rgba(#00bfa5, 0);
+	padding-right: 10px;
 
-	&:hover {
+	&:hover, &.active {
+		border-color: rgba(#00bfa5, 1);
 		color: $turquoise;
-		transition: color .3s;
+		transition: all .3s;
 	}
 
-	&:active {
-		color: #00bfa5;
-	}
 }
 
 .articles-content {
 	width: 70%;
 	float: right;
+	padding-top: rem(70px);
+	box-sizing: border-box;
+	
+	p {
+		text-align: left;
+	}
+}
+
+.article{
+	box-sizing: border-box;
+	padding:rem(20px) 0 ;
+
+	&__head {
+		margin: rem(20px) 0;
+	}
 }

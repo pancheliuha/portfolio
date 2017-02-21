@@ -1,0 +1,45 @@
+.parallax-wrapper {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateZ(0);
+}
+
+.parallax__mouse-move {
+    list-style-type: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform: translateZ(0);
+    margin: 0;
+    padding: 0;
+
+}
+
+.layer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    &__img {
+        position: absolute;
+        width: 110%;
+        height: 110%;
+        left: -5%;
+        top: -5%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center 40%;
+    }
+
+    @for $i from 0 through 9 {
+        .layer__img_#{$i} {
+            background-image: url('../img/parallax/layer_#{$i}.png');
+        }
+    }
+}

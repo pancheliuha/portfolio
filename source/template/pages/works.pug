@@ -8,6 +8,8 @@ block variables
 	- var footer__static= ''
 
 block content
+	.parallax-wrapper
+		+parallax ("scroll",[0,1,2,3,4,5,6,7,8,9])
 	.wrapper
 		.content
 			.header-wrap
@@ -45,16 +47,18 @@ block content
 
 
 				.talks__form
-					.feedback__wrapper
-						form(action="" class="feedback")
-							+text-with-lines('связаться со мной', 'text-with-lines_feedback')
-							input(type="text" placeholder="Имя" value="").feedback__name
-							input(type="email" placeholder="Email" value="").feedback__email
-							textarea(name="message", cols="15", rows="6" placeholder="Ваше сообщение" value="").feedback__message
-							.feedback__buttons
-								input(type="submit" value="Отправить").feedback__submit
-								input(type="reset" value="Очистить").feedback__reset
-						
+					.feedback__background-blur-wrapper
+						.feedback__background-blur
+						.feedback__wrapper
+							form(action="" class="feedback")
+								+text-with-lines('связаться со мной', 'text-with-lines_feedback')
+								input(type="text" placeholder="Имя" value="").feedback__name
+								input(type="email" placeholder="Email" value="").feedback__email
+								textarea(name="message", cols="15", rows="6" placeholder="Ваше сообщение" value="").feedback__message
+								.feedback__buttons
+									input(type="submit" value="Отправить").feedback__submit
+									input(type="reset" value="Очистить").feedback__reset
+
 						
 
 				.talks__foot

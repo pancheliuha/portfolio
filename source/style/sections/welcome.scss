@@ -1,10 +1,12 @@
 
 body {
-	background: url(../img/mountains.png) no-repeat ;
-	background-size: cover;
+
 	font-family: 'roboto_medium', sans-serif;
 
 }	
+
+
+
 
 //================
 //welcome-header
@@ -67,12 +69,18 @@ body {
 // welcome-front content
 //================
 
-.flip-container,
-.about-card {
-	&:hover {
-		//transform: rotateY(180deg);
-	}	
+/* .flip-container.hover {
+	.about-card {
+		transform: rotateY(180deg);
+	}
+} */
+
+.flip-container.flipped {
+	.about-card {
+		transform: rotateY(180deg);
+	}
 }
+
 
 .flip-container {
 	border-top-left-radius: rem(15px);
@@ -80,14 +88,15 @@ body {
 	height: rem(395px - 44px);
 	width: rem(378px);
 	display: inline-block;
-	perspective: 1000;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	margin: auto;
-	background-color: rgba($white-opacity, .7);
+	
+	/* flip-properties */
+	perspective: 1000px;
 
 }
 
@@ -96,11 +105,14 @@ body {
 	display: inline-block;
 	vertical-align: middle;
 	border-top-left-radius: rem(15px);
-	border-top-right-radius: rem(15px);
-	opacity: .85;	
+	border-top-right-radius: rem(15px);	
 	height: 100%;
+	width: 100%;
 	text-align: center;
-	transform-style: preverse-3d;
+	background-color: rgba(#fff, .7);
+
+	/* flip-properties */
+	transform-style: preserve-3d;
 	transition: .5s;
 
 
@@ -115,12 +127,15 @@ body {
 }
 
 .about-card__front {
-	z-index:0;
+	z-index: 2;
 	height: 100%;
-	width: rem(378px);
+	width: 100%;
 	text-align: center;
-	position: relative;
+	position: absolute;
+	top: 0;
+	left: 0;
 	backface-visibility: hidden;
+	transform: rotateY(0deg);
 }
 
 .about-card__front__content {
@@ -135,15 +150,16 @@ body {
 
 .about-card__name {
 	margin-bottom: 0;
-	font-size: rem(28px);
+	font-size: rem(32px);
 	color: $black;
+	letter-spacing: 0.5px;
 }
 
 .about-card__description {
 	margin-top: 10px;
 	font-family: 'roboto_regular', sans-serif;
-	color: $grey;
 	font-size: rem(16px);
+	opacity: .7;
 }
 
 .socials {
@@ -199,7 +215,6 @@ body {
 	right: 0;
 	left: 0;
 	width: 100%;
-	opacity: .8;
 	height: rem(44px);
 
 
@@ -213,7 +228,7 @@ body {
 	}
 
 	&__item {
-		background-color: rgba(#00bfa5, .8);
+		background-color: rgba(#08b09d, 1);
 		float: left;
 		text-align: center;
 		font-size: rem(16px);
@@ -254,10 +269,7 @@ body {
 	}
 }
 
-.about-card__front__content,
-.about-card__front__nav {
-	opacity:0;
-}
+
 //====================
 // welcome-back-content
 //====================
@@ -267,8 +279,12 @@ body {
 	width: 100%;
 	text-align: center;
 	position: absolute;
-	bottom:0;
+	top:0;
+	left: 0;
+	z-index: 1;
+
 	backface-visibility: hidden;
+	transform: rotateY(180deg);
 
 }
 
@@ -364,8 +380,15 @@ textarea {
 		box-shadow: inset 0 0 1px 2px $valid-color; } 
 }
 
+
 .about-card__checkbox {
 	cursor: pointer;
+	display: none;
+
+	&:checked + .about-card__label__checkbox::after{
+		//max-width: 25px;
+   		opacity: 1;
+	}
 }
 
 .about-card__form__radio-yes,
@@ -373,10 +396,34 @@ textarea {
 	cursor: pointer;
 }
 
-.about-card__form__text {
+.about-card__label__checkbox {
 	font-family: "roboto_regular", sans-serif;
 	color: $black;
 	cursor: pointer;
+	position: relative;
+	
+
+	&::after,
+	&::before
+	 {
+		position: absolute; 
+		top: -3px; 
+		left: -25px;
+  		font-size: 23px;
+  		font-family: FontAwesome;
+	}
+
+	&::before {
+		//content: '\f046';
+	}
+
+	&::after {
+		//max-width: 0;
+		overflow: hidden;
+		content: '\f046'; 
+		opacity: 0.5;
+		transition: all 0.35s;
+}
 }
 
 .about-card__question {
@@ -400,7 +447,7 @@ textarea {
 	}
 
 		&__item {
-			background-color: rgba(#00bfa5, .8);
+			background-color: rgba(#08b09d, 1);
 			float: left;
 			text-align: center;
 			font-size: rem(16px);
@@ -451,3 +498,8 @@ textarea {
 	color: #e0e2e4;
 	font-family: 'roboto_light', sans-serif;
 }
+
+
+
+
+

@@ -6,7 +6,7 @@ module.exports = function() {
     //var YOUR_LOCALS = require('content.json');
 
     return $.gulp.src('./source/template/pages/*.pug')
-      .pipe($.gp.pug({ 
+      .pipe($.gp.pug({
         pretty: '\t'
         //locals: YOUR_LOCALS
       }))

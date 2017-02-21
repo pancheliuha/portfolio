@@ -22,9 +22,11 @@ $text-color: 455a64;
 @import "common/fonts";
 @import "common/extends";
 @import "common/adjustment";
+@import "common/menu";
+@import "common/parallax_main";
 @import "common/header";
 @import "common/footer";
 @import "common/slider";
 
 //styles
-@import "sections/**/*.scss"
+@import "sections/**/*.scss";

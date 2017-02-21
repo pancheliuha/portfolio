@@ -9,10 +9,13 @@ global.$ = {
     cssFoundation: require('./gulp/paths/css.foundation.js'),
     app: require('./gulp/paths/app.js')
   },
-  gulp: require('gulp'),
-  rimraf: require('rimraf'),
-  browserSync: require('browser-sync').create(),
-  gp: require('gulp-load-plugins')()
+    gulp: require('gulp'),
+    rimraf: require('rimraf'),
+    browserify: require('browserify'),
+    vinyl: require('vinyl-source-stream'),
+    buffer: require('vinyl-buffer'),
+    browserSync: require('browser-sync').create(),
+    gp: require('gulp-load-plugins')()
 };
 
 $.path.task.forEach(function(taskPath) {

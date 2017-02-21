@@ -1,29 +1,45 @@
-section.slider-wrapper
+section(id="mainSection").slider-wrapper
 	.slider
 
 		.slider__first-part
 			.slider__project-image-wrapper
 				.slider__project-image
-					img(src="assets/img/port1.jpg", alt="port1").project__img
-					img(src="assets/img/port2.jpg", alt="port2").project__img
-					img(src="assets/img/port3.jpg", alt="port3").project__img
-			+slider-left('лендинг независимой компании', 'html,css', '#')
-			+slider-left('лендинг независимой компании', 'html,css', '#')
-			+slider-left('лендинг независимой компании', 'html,css', '#')
+					.slider__item.slideshow
+						img(src="http://dummyimage.com/400x600.png/99cccc&text=1", alt="port1").project__img
+					.slider__item.slideshow.active
+						img(src="http://dummyimage.com/400x600.png/99cccc&text=2", alt="port2").project__img
+					.slider__item.slideshow
+						img(src="http://dummyimage.com/400x600.png/99cccc&text=3", alt="port3").project__img
+					.slider__item.slideshow
+						img(src="http://dummyimage.com/400x600.png/99cccc&text=4", alt="port3").project__img
+			+slider-left('лендинг независимой компании1', 'html,css', '#')
+			+slider-left('лендинг независимой компании2', 'html,css', '#',"active")
+			+slider-left('лендинг независимой компании3', 'html,css', '#')
+			+slider-left('лендинг независимой компании4', 'html,css', '#')
 		.slider__second-part
 			.slider__nav
 				.slider__nav-item-wrapper
-					a(href="#").slider__nav-item.slider__nav-item_left
+					button.slider__nav-item.slider__nav-item_left
 						+icon('arrow_down','icon_arrow_down_centered')
-						img(src="assets/img/port1.jpg", alt="port1").project__img
-						img(src="assets/img/port2.jpg", alt="port2").project__img
-						img(src="assets/img/port3.jpg", alt="port3").project__img
-						.slider__nav-overlay-left
+						.slider__item.left
+							img(src="http://dummyimage.com/400x600.png/99cccc&text=1", alt="port1").project__img
+						.slider__item.left
+							img(src="http://dummyimage.com/400x600.png/99cccc&text=2", alt="port2").project__img
+						.slider__item.left.active
+							img(src="http://dummyimage.com/400x600.png/99cccc&text=3", alt="port3").project__img
+						.slider__item.left
+							img(src="http://dummyimage.com/400x600.png/99cccc&text=4", alt="port3").project__img
+						//.slider__nav-overlay-left
 							
 	
-					a(href="#").slider__nav-item.slider__nav-item_left
+					button.slider__nav-item.slider__nav-item_right
 						+icon('arrow_up','icon_arrow_up_centered')
-						img(src="assets/img/port1.jpg", alt="port1").project__img
-						img(src="assets/img/port2.jpg", alt="port2").project__img
-						img(src="assets/img/port3.jpg", alt="port3").project__img
+						.slider__item.right.active
+							img(src="http://dummyimage.com/400x600.png/99cccc&text=1", alt="port1").project__img
+						.slider__item.right
+							img(src="http://dummyimage.com/400x600.png/99cccc&text=2", alt="port2").project__img
+						.slider__item.right
+							img(src="http://dummyimage.com/400x600.png/99cccc&text=3", alt="port3").project__img
+						.slider__item.right
+							img(src="http://dummyimage.com/400x600.png/99cccc&text=4", alt="port3").project__img
 						.slider__nav-overlay-left

@@ -5,7 +5,7 @@ block variables
 	- var triangle_mod= ''
 	- var header_min= '' 
 	- var header= 'header'
-	- var frontend= ['HTML5','CSS3','JavaScript,jQuery']
+	- var frontend= ['HTML5','CSS3','JS,jQuery']
 	- var backend= ['Nodejs','Mongodb','PHP', 'noSQL']
 	- var workflow= ['GIT','Gulp','Bower', 'npm']
 	- var footer__static= ''
@@ -13,10 +13,12 @@ block variables
 
 
 block content
+	.parallax-wrapper
+		+parallax ("scroll",[0,1,2,3,4,5,6,7,8,9])
 	.wrapper
 		.content
 			include ../common/header
-			section.bio-skills
+			section(id="mainSection").bio-skills
 				.wrap
 					.biography
 						.biography__head

@@ -17,7 +17,7 @@
 }
 
 .slider__first-part {
-	z-index:12;
+	z-index:2;
 	float: left;
 	position: relative;
 	height: 100%;
@@ -39,7 +39,12 @@
 	left: 0;
 	right: 0;
 	text-align: center;
+	opacity: 0;
 
+	&.active {
+		opacity:1;
+		z-index: 4;
+	}
 	@include tablets() {
 		height: 60%;
 		position: absolute;
@@ -74,7 +79,7 @@
 	font-family: 'roboto_medium', sans-serif;
 	color: #20b5a1;
 	padding: rem(15px) 0;
-
+	text-transform: uppercase;
 	@include tablets() {
 		font-size: rem(21px);
 	}
@@ -88,11 +93,16 @@
 	padding: rem(10px);
 	color: #fff;
 	border-radius: 5px;
+	transition: background-color .3s;
+	
+	&:hover {
+		background-color: #0b6e64;
+	}
 }
 
 .slider__second-part {
 	@extend .slider__first-part;
-	z-index: 11;
+	z-index: 1;
 	background-color: #efebe0;
 }
 
@@ -115,6 +125,34 @@
 	width: 100%;
 }
 
+.slider__item.right {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.slider__item.left {
+	@extend .slider__item.right;
+
+	top: -100%;
+}
+
+.slider__item.slideshow {
+	opacity: 0;
+
+	&.active {
+		opacity:1;
+	}
+}
+
+.slider__item.active {
+	@extend .slider__item;
+
+	top: 0;
+}
+
 .project__img {
 	max-height: 90%;
 	max-width: 90%;
@@ -124,7 +162,6 @@
 	right: 0;
 	left: 0;
 	margin: auto;
-	
 
 }
 
@@ -145,14 +182,20 @@
 	width: 100%;
 	height: 100%;
 	position: relative;
+
 }
 
 .slider__nav-item {
+	padding: 0;
+	overflow: hidden;
+	outline:none;
+	border: none;
 	position: relative;
 	display: block;
 	height: 100%;
 	width: 50%;
 	float: left;
+	background-color: rgba(red, .7) ;
 
 	&_left {
 		background-color: #f1ede1;
@@ -161,28 +204,46 @@
 	&_right {
 		background-color: #e3ded0;
 	}
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+.slider__nav__icon-wrapper {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
 }
 
 
-.icon_arrow_down_centered,
-.icon_arrow_up_centered
+.icon_arrow_up_centered,
+.icon_arrow_down_centered
  {
 	@include centered-pos();
 	display: inline-block;
 	width: rem(32.18px) !important;
-	z-index: 33;
+	z-index: 3;
+	opacity: 1 !important;
+
+	&:hover {
+		transform: translateY(0) !important;
+	}
 }
 
-
+.icon_arrow_up_centered {
+	opacity: 1 !important;
+}
 
 
 
 .slider__nav-overlay-left {
 	position: absolute;
+	top: 0;
 	z-index: 2;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(#b6b4ae, .4);
+	background-color: rgba(blue, .4);
 
 	&:hover {
 		background-color: rgba(#b6b4ae, .7);

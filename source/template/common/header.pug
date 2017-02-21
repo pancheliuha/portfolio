@@ -3,9 +3,9 @@ header(class=header + ' ' + header_min)
 		.header__socials
 			+social('icon_white')
 		.hamburger
-			.hamburger__top
-			.hamburger__middle
-			.hamburger__bottom
+			span.hamburger__top
+			span.hamburger__middle
+			span.hamburger__bottom
 	.header__content
 		.about-card__img.about-card__img_bordered
 			img(src="assets/img/my-photo.png", alt="my-photo").about-card__photo
@@ -15,7 +15,8 @@ header(class=header + ' ' + header_min)
 	.portfolio-svg-wrap
 		+icon('portfolio_header')
 	.header__arrow-down-wrapper
-		+icon('arrow_down')
+		a(href="#mainSection").header__arrow-down-link
+			+icon('arrow_down')
 	.header__foot
 		div(class="triangle-left" + ' ' + triangle_mod)
 		div(class="triangle-right" + ' ' + triangle_mod)

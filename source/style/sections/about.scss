@@ -220,9 +220,6 @@
 
 }
 
-.skill__item:last-child {
-	//margin-right: 0;
-}
 
 .circle-wrap {
 	position: relative;
@@ -230,41 +227,36 @@
 }
 
 .circle {
-	width: rem(120px);
-	height: rem(120px);
+	width: 120px;
+	height: 120px;
 }
 
 circle:first-child {
 	fill:rgba(0,0,0,0);
 	stroke: #dfdcd5;
-	stroke-width: rem(20px);
-	stroke-dasharray: rem(314px) rem(314px);
-	r: rem(50px);
-	cx: rem(-60px);
-	cy: rem(60px);
+	stroke-width: 20px;
+	stroke-dasharray: 314px 314px;
 }
 
 
 circle:last-child {
 	fill:rgba(0,0,0,0);
 	stroke:$turquoise;
-	stroke-width: rem(20px);
-	stroke-dasharray: rem(250px) rem(314px);
-	r: rem(50px);
-	cx: rem(-60px);
-	cy: rem(60px);
+	stroke-width: 20px;
+	stroke-dasharray: 250px 314px;
+	transform: rotate(-90deg);
 
 }
 
 .circle__text {
 	position: absolute;
-    line-height: rem(120px);
+    line-height: 120px;
     top: 0;
     left: 0;
-    width: rem(120px);
+    width: 120px;
     color: #00bfa5;
-    font-family: 'roboto_medium';
-    font-size: rem(12px);
+    font-family: 'roboto_medium', sans-serif;
+    font-size: 12px;
 
 }
 

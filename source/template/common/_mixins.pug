@@ -16,6 +16,11 @@ mixin text-with-lines (text, mod)
 	h2(class="text-with-lines" + ' ' + mod)
 		| #{text}
 
+mixin parallax (typeOfParallax,mountOfLayers)
+	ul(class="parallax__" + typeOfParallax)
+		each layer in mountOfLayers
+			li(class="layer")
+				div(class="layer__img" + " " +"layer__img_" + layer)
 
 
 
@@ -44,17 +49,18 @@ mixin skill(techChapter, skillNames)
 			li(class="skill__item")
 				.circle-wrap
 					svg(class="circle" + ' ' + skill)
-						circle(transform="rotate(-90)")
-						circle(transform="rotate(-90)" style="stroke-dasharray:250px 314px;")
+						circle(transform="rotate(-90)" r="50px" cx="-60px" cy="60px")
+						circle(transform="rotate(-90)" style="stroke-dasharray:250px 314px;" r="50px" cx="-60px" cy="60px")
 					span.circle__text
 						| #{skill}
 
-mixin slider-left(description_text, technologies_text, href)
-		.slider-inner
+mixin slider-left(description_text, technologies_text, href,active)
+	- var active = active || ""
+		div(class="slider-inner" + " " + active)
 			.slider__description
 				h4.slider__description-text #{description_text}
 				p.slider__technologies #{technologies_text}
-				a(href=href class="slider__link") Перейти на сайт
+				a(href=href class="slider__link" target="_blank") Перейти на сайт
 
 
 

@@ -3,7 +3,6 @@
 	height: 100vh;
 	position: relative;
 	text-align: center;
-	background: rgba(#016672, .3);
 }
 
 .header__top {
@@ -12,40 +11,80 @@
 	line-height:100px;
 }
 
+.header__top.active {
+	position: fixed;
+	width : 100%;
+	z-index: 9999;
+}
+
 .header__socials {
 	display: inline-block;
 }
 
 .hamburger {
+	z-index: 99;
 	height: rem(35px);
 	width: rem(40px);
 	float: right;
 	margin-right: rem(30px);
 	margin-top: rem(30px);
-	line-height:100px;
+	line-height: 100px;
 	display: inline-block;
 	position: relative;
-	
+    transition: all .3s;
+	&:hover {
+		cursor: pointer;
+	}
+
+  .hamburger__top {
+	  position: absolute;
+	  top: 0;
+	  height: rem(5px);
+	  border-radius: 2px;
+	  width: 100%;
+	  background-color: #fff;
+	  transition: all .3s;
+
+
+  }
+
+  .hamburger__middle {
+    @extend .hamburger__top;
+    top: rem(35/2-2.5 + 0px);
+    transition: all .3s;
+
+  }
+
+  .hamburger__bottom {
+    @extend .hamburger__top;
+    top: rem(30px);
+    bottom: 0;
+    transition: all .3s;
+  }
 }
 
-.hamburger__top {
-	position: absolute;
-	top: 0;
-	height: rem(5px);
-	border-radius: 2px;
-	width: 100%;
-	background-color: #fff;
-}
 
-.hamburger__middle {
-	@extend .hamburger__top;
-	top: rem(35/2-2.5 + 0px);
-}
 
-.hamburger__bottom {
-	@extend .hamburger__top;
-	top: rem(30px);
-	bottom: 0;
+
+
+
+
+.hamburger.active {
+
+  .hamburger__top {
+    top: rem(35/2-2.5 + 0px);
+    transform: rotate(-45deg);
+  }
+
+  .hamburger__bottom {
+    top: rem(35/2-2.5 + 0px);
+    transform: rotate(45deg);
+  }
+
+  .hamburger__middle {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
 }
 
 .header__content {
@@ -69,7 +108,8 @@
 }
 
 .about-card__description_white {
-	color: #a6c0c7;
+	color: #fff;
+	opacity: .7;
 }
 
 .about-card__img_bordered {
@@ -78,10 +118,10 @@
 
 .icon_white.icon_white {
 	
-	fill: #c1d6d6;
-	opacity: 1; 
+	fill: #fff;
+	opacity: .7;
 	 &:hover {
-		fill: #f0f5f5;
+		opacity: 1;
 		transition: all 0.2s ; 
 	} 
 }
@@ -106,10 +146,15 @@
 .header__arrow-down-wrapper {
 	width: 100%;
 	height: 40px;
+	display: block;
 	position: absolute;
 	bottom: rem(40px);
 	text-align: center;
 	z-index: 2;
+}
+
+.header__arrow-down-link {
+	display: inline-block;
 }
 
 .icon_arrow_down.icon_arrow_down {
