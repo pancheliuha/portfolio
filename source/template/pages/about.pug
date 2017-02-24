@@ -5,9 +5,9 @@ block variables
 	- var triangle_mod= ''
 	- var header_min= '' 
 	- var header= 'header'
-	- var frontend= ['HTML5','CSS3','JS,jQuery']
-	- var backend= ['Nodejs','Mongodb','PHP', 'noSQL']
-	- var workflow= ['GIT','Gulp','Bower', 'npm']
+	- var frontend= {'HTML5':'85','CSS3': '90','JavaScript':'70', 'jQuery':'75'}
+	- var backend= {'Nodejs':'25','Mongodb':'50'}
+	- var workflow= {'GIT':'40','Gulp':'70','Bower':'30', 'npm':'47'}
 	- var footer__static= ''
 
 
@@ -22,11 +22,11 @@ block content
 				.wrap
 					.biography
 						.biography__head
-							+text-with-lines('обо мне', 'text-with-lines_about')
+							+text-with-lines('Обо мне', 'text-with-lines_about')
 							+icon('about_header')
 						.biography__photo-wrapper
 							img(src="assets/img/about_photo.jpg", alt="my-photo").biography__photo
-						+text-with-lines('кто я', 'text-with-lines_about__info')
+						+text-with-lines('Кто я', 'text-with-lines_about__info')
 						p.biography__info
 							| Я веб-разработчик из Киева. Мне 23 года. Я занимаюсь разработкой современных сайтов и приложений. 	Мне нравится делать интерестные и современные проэкты.
 						p.biography__info
@@ -34,8 +34,8 @@ block content
 					
 					.skills
 						.skills__head
-							+text-with-lines('чем я могу быть', 'text-with-lines_skills')
-							h3.skills__description-head вам полезен
+							+text-with-lines('Чем я могу быть', 'text-with-lines_skills')
+							h3.skills__description-head Вам полезен
 						.skills__content
 							p.skills__description
 								| Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать несложные задачи на Backend. Но давайте по порядку.
@@ -43,10 +43,12 @@ block content
 						+skill('Backend', backend)
 						+skill('Workflow', workflow)
 			section.map
-				//img(src="assets/img/map.png", alt="my-photo").map__photo
+				#map__block
+				.zoom__in
+				.zoom__out
 				.contacts
 					.contacts__head
-						+text-with-lines('контакты', 'text-with-lines_contacts')
+						+text-with-lines('Контакты', 'text-with-lines_contacts')
 					ul.contacts__list
 						li.contacts__item
 							a(href="skype:vitya2806?call").contacts__link
@@ -71,4 +73,5 @@ block content
 
 
 		include ../common/footer
-			
+		include ../common/preloader
+

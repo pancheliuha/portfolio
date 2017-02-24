@@ -5,7 +5,10 @@
             paralaxMain = require('./modules/paralax-main')(),
             scrollEvents = require('./modules/scroll-events')(),
             anchors = require('./modules/anchors')(),
-            slider = require('./modules/slider')();
+            preloader = require('./modules/preloader'),
+            slider = require('./modules/slider')(),
+            skills = require('./modules/skills')(),
+            map = require('./modules/map')();
 
         /********welcome-flip************/
 
@@ -53,5 +56,5 @@
 
 
 
-
+    preloader();
 })(jQuery);

@@ -19,14 +19,17 @@ $text-color: 455a64;
 
 @import "font-awesome/font-awesome";
 @import "common/_mixins";
+@import "common/animation";
 @import "common/fonts";
 @import "common/extends";
 @import "common/adjustment";
+@import "common/preloader";
 @import "common/menu";
 @import "common/parallax_main";
 @import "common/header";
 @import "common/footer";
 @import "common/slider";
+
 
 //styles
 @import "sections/**/*.scss";

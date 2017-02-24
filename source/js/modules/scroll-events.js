@@ -54,7 +54,7 @@ module.exports = function () {
         }
 
 
-        /**********set-active links**********/
+        /**********set-active blog links**********/
         $.each(articles,function (index, item) {
 
             var $this = $(this),
@@ -62,8 +62,7 @@ module.exports = function () {
                 artOffsetBottom = artOffsetTop + $this.outerHeight(),
                 id = '#' + $this.attr('id'),
                 artLink = $("a[href='" + id + "']");
-
-            /**********resize**********/
+            
 
             if(wScroll + 1 >=artOffsetTop && wScroll + 1 <= artOffsetBottom) {
                 if(!artLink.hasClass('active')) {

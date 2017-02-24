@@ -42,15 +42,15 @@ block content
 										input(type="password" placeholder="Пароль" value="").about-card__pwd
 										span.fa.fa-key
 									input(type="checkbox" id="auth-form__checkbox" value="").about-card__checkbox
-									label.about-card__label__checkbox
+									label(for="auth-form__checkbox").about-card__label__checkbox
 										| Я человек
 									p.about-card__question Вы точно не робот?
 									input(type="radio" id="auth-form__radio-yes" name="auth-radio").about-card__form__radio-yes
-									label(for="auth-form__radio-yes")
+									label(for="auth-form__radio-yes").about-card__label__radio
 										span.about-card__form__text
 											| Да
 									input(type="radio" id="auth-form__radio-no" name="auth-radio").about-card__form__radio-no
-									label(for="auth-form__radio-no")
+									label(for="auth-form__radio-no").about-card__label__radio
 										span.about-card__form__text
 											| Не уверен
 							+navigation('about-card__back__nav',{"На главную":"#","Войти":"#"})
@@ -58,3 +58,4 @@ block content
 			footer.footer-min
 				p.footer__content
 					| @Victor Pancheliuha
+			include ../common/preloader

@@ -1,7 +1,8 @@
 module.exports = function() {
     var hamburger = $('.hamburger'),
         menu = $('.menu'),
-        headerMenu = $('.header__top');
+        headerMenu = $('.header__top'),
+        url=document.location.href;
 
         return function() {
             hamburger.on('click', function () {
@@ -17,6 +18,12 @@ module.exports = function() {
                     }
                 });
                 headerMenu.toggleClass('active');
+            });
+
+            $.each($('.menu__nav__link'), function () {
+                if(this.href == url) {
+                    $(this).addClass('active');
+                }
             });
         }
 

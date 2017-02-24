@@ -43,16 +43,17 @@ mixin social (mod,type)
 
 
 mixin skill(techChapter, skillNames)
-	h5(class="skill__name") #{techChapter}
-	ul.skill__list
-		each skill in skillNames
-			li(class="skill__item")
-				.circle-wrap
-					svg(class="circle" + ' ' + skill)
-						circle(transform="rotate(-90)" r="50px" cx="-60px" cy="60px")
-						circle(transform="rotate(-90)" style="stroke-dasharray:250px 314px;" r="50px" cx="-60px" cy="60px")
-					span.circle__text
-						| #{skill}
+	.skill__wrap
+		h5(class="skill__name") #{techChapter}
+		ul.skill__list
+			each percent,skill in skillNames
+				li(class="skill__item")
+					.circle-wrap
+						svg(class="circle" + ' ' + skill)
+							circle(transform="rotate(-90)" r="50px" cx="-60px" cy="60px")
+							circle(transform="rotate(-90)" r="50px" cx="-60px" cy="60px" data-percent=percent)
+						span.circle__text
+							| #{skill}
 
 mixin slider-left(description_text, technologies_text, href,active)
 	- var active = active || ""
