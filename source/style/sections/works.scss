@@ -72,7 +72,6 @@
 	background: url('../img/about-bg.png');
 	background-color: #fff;
     background-repeat: no-repeat;
-	//background-size: 2000px;
 	background-position: left top;
 	position: relative;
 }
@@ -80,11 +79,20 @@
 .talks__header {
 	position: relative;
 	height: rem(220px);
+	transform: translateY(300px);
 
 	@include phones() {
 		height: rem(130px);
 	}
+
+	&.fadeInFromBottom {
+		animation: fadeInFromBottom 1s ease-in-out;
+		animation-fill-mode: forwards;
+	}
+
 }
+
+
 
 .text-with-lines_talks {
 	@extend .text-with-lines_works;
@@ -98,7 +106,13 @@
 }
 
 .talks__content {
-	margin-bottom: rem(80px)
+	margin-bottom: rem(80px);
+	transform: translateY(300px);
+
+	&.fadeInFromBottom {
+		animation: fadeInFromBottom 1s ease-in-out;
+		animation-fill-mode: forwards;
+	}
 }
 
 .talks__item {
@@ -106,11 +120,9 @@
 	width: rem(380px);
 	text-align: left;
 
-
 	@include phones() {
 		width: 90%;
 	}
-
 }
 
 .talks__comment {

@@ -25,9 +25,10 @@ mixin parallax (typeOfParallax,mountOfLayers)
 
 
 
-mixin social (mod,type)
+mixin social (mod,type,listMode)
 	- mod = mod || ''
 	- type = type || ''
+	- listMode = listMode || ''
 	.socials
 		ul.socials__list
 			li.socials__item

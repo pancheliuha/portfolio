@@ -69,11 +69,6 @@ body {
 // welcome-front content
 //================
 
-/* .flip-container.hover {
-	.about-card {
-		transform: rotateY(180deg);
-	}
-} */
 
 .flip-container.flipped {
 	.about-card {
@@ -206,7 +201,7 @@ body {
 
 	 &:hover {
 		opacity: 1;
-		transition: all 0.1s ; 
+		transition: all 0.6s ;
 	} 
 }
 

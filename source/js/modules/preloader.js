@@ -2,6 +2,6 @@ module.exports = function() {
     $(window).load(function () {
        var preloader = $('.preloader');
 
-       preloader.fadeOut(400);
+       preloader.fadeOut(800);
     });
 }

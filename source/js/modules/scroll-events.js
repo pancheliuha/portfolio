@@ -16,7 +16,7 @@ module.exports = function () {
             articleLinks = $('.articles-links'),
             articles = $('.articles-content').find('.article');
 
-        /**********parallax-function**********/
+        /**********parallax-scroll-function**********/
         function parallax() {
 
             function slide(block, strafeAmount) {
@@ -74,6 +74,29 @@ module.exports = function () {
                 console.log('artOffsetTop' ,artOffsetTop, 'artOffsetBottom' ,artOffsetBottom);
         });
 
+
+        /*********fade-in and fade-out aimations**********/
+
+        //set talks variables
+        if($('.talks').length) {
+            var talks = $('.talks'),
+                talksHeader = talks.find('.talks__header'),
+                talksItems = talks.find('.talks__content'),
+
+                //offsets
+                talksHeaderOffset = talksHeader.offset().top,
+                talksItemsOffset = talksItems.offset().top;
+                console.log(talksHeaderOffset, talksItemsOffset);
+
+            animateScroll(talksHeader, talksHeaderOffset, "fadeInFromBottom");
+            animateScroll(talksItems, talksItemsOffset, "fadeInFromBottom");
+        }
+        console.log('!!!!!!', ($(window).height()));
+        function animateScroll(block, offset, animationName) {
+            if (wScroll > (offset - $(window).height())) {
+                block.addClass(animationName);
+            }
+        }
     });
 
 
