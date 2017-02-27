@@ -33,7 +33,7 @@ block content
 							+navigation('about-card__front__nav',navigationList)
 						.about-card__back
 							.about-card__back__content
-								+text-with-lines('авторизуйтесь', 'text-with-lines_auth')
+								+text-with-lines('Авторизуйтесь', 'text-with-lines_auth')
 								form.about-card__form
 									label.about-card__input-wrapper
 										input(type="text" placeholder="Логин" value="").about-card__login
@@ -49,10 +49,12 @@ block content
 									label(for="auth-form__radio-yes").about-card__label__radio
 										span.about-card__form__text
 											| Да
+										.about-card__form__check
 									input(type="radio" id="auth-form__radio-no" name="auth-radio").about-card__form__radio-no
 									label(for="auth-form__radio-no").about-card__label__radio
 										span.about-card__form__text
 											| Не уверен
+										.about-card__form__check
 							+navigation('about-card__back__nav',{"На главную":"#","Войти":"#"})
 
 			footer.footer-min

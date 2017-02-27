@@ -5,14 +5,18 @@
 	@include tablets() {
 		height: rem(1000px);
 	}
+
+	@include phones() {
+		height: rem(650px);
+	}
 }
 
 .slider {
 	height: 100%;
 	@extend %clearfix;
 
-	@include tablets() {
-		
+	@include phones() {
+		height: 100%;
 	}
 }
 
@@ -25,6 +29,12 @@
 	background-color: #f0efe9;
 
 	@include tablets() {
+		 float: none;
+		 height: 50%;
+		 width: 100%;
+	 }
+
+	@include phones() {
 		float: none;
 		height: 50%;
 		width: 100%;
@@ -47,8 +57,10 @@
 	}
 	@include tablets() {
 		height: 60%;
-		position: absolute;
 		top: 100%;
+	}
+	@include phones() {
+		height: 65%;
 	}
 }
 
@@ -62,7 +74,6 @@
 
 	@include phones() {
 		width: 95%;
-		height: 90%;
 	}
 }
 
@@ -71,6 +82,12 @@
 	font-weight: 400;
 	font-size: rem(35px);
 	color: #455a64;
+
+
+	@include phones() {
+		font-size: rem(28px);
+		margin: 10px 0;
+	}
 
 }
 
@@ -83,6 +100,10 @@
 	text-transform: uppercase;
 	@include tablets() {
 		font-size: rem(21px);
+	}
+
+	@include phones() {
+		font-size: rem(16px);
 	}
 }
 
@@ -184,6 +205,10 @@
 
 	@include tablets() {
 		height:  40%;
+	}
+
+	@include tablets() {
+		height:  35%;
 	}
 }
 

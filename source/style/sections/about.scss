@@ -29,7 +29,6 @@
 }
 
 .text-with-lines_about.text-with-lines_about {
-	//width: 100%;
 	color: #373e42;
 	font-size: rem(63px);
 	display: inline-block;
@@ -67,14 +66,13 @@
 	display: inline-block;
 	width: 80%;
 	height: rem(500px);
-	border-radius: rem(9px);
+	border-radius: 9px;
 	overflow: hidden;
 
 	@include tablets() {
-		height: rem(400px);
-		width: 60%;
+		height: rem(600px);
+		width: 80%;
 		overflow: hidden;
-		//position: relative;
 	}
 
 	@include phones() {
@@ -103,7 +101,7 @@
 	padding-right: 10%;
 
 	@include tablets() {
-		width: 60%;
+		width: 80%;
 		display: inline-block;
 		margin: 0;
 	}

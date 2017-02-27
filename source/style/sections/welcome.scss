@@ -1,7 +1,7 @@
 
 body {
 
-	font-family: 'roboto_medium', sans-serif;
+	font-family: 'roboto_regular', sans-serif;
 
 }	
 
@@ -42,7 +42,6 @@ body {
 		margin-top: rem(24px);
 		border: rem(1px) solid $white;
 		border-radius: rem(10px);
-		//background-color: rgba($white, .5);
 		text-align: center;
 		color: #fff;
 		font-size: rem(16px);
@@ -316,6 +315,11 @@ body {
 		right: 12%;
 		top: 50%;
 	}
+
+	&.text-with-lines_auth::before,
+	&.text-with-lines_auth::before{
+		display: none;
+	}
 }
 
 .about-card__form {
@@ -432,49 +436,48 @@ textarea {
 
 .about-card__form__radio-yes,
 .about-card__form__radio-no {
-	&:checked + .about-card__label__radio::after{
-		font-size: rem(10px);
-		color: #08B09D;
+	&:checked + .about-card__label__radio .about-card__form__check::before{
+		transform: scale(1);
+		visibility: visible;
+		transition: all .2s;
 	}
 }
 
 .about-card__label__radio {
 	cursor: pointer;
 	position: relative;
-	margin-left: rem(35px);
+	margin-left: rem(40px);
 
-
-	&::before, &::after {
-		font-family: FontAwesome;
-		content: '\f111';
-		position: absolute;
+	&:hover .about-card__form__check{
+		border: 1px solid $turquoise;
+		transition: all .25s linear;
 	}
 
-	&::before {
-		top: rem(0.1px);
-		left: rem(-25px);
-		color: #fff;
-		font-size: 20px;
-	}
-
-	&::after {
-		top: rem(5.2px);
-		left: rem(-20.7px);
-		font-size: 0;
-		transition: all 0.1s;
-
-		@include tablets() {
-			top: rem(7px);
-			left: rem(-19.5px);
-		}
-
-		@include phones() {
-			top: rem(8px);
-			left: rem(-19px);
-		}
-	}
 }
 
+.about-card__form__check {
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: -2px;
+	left: -25px;
+	border: 1px solid #aaa;
+	transition: all .25s linear;
+
+	&::before {
+		content: "";
+		@include centered-pos();
+		visibility: hidden;
+		display: block;
+		height: 10px;
+		width: 10px;
+		transform: scale(2);
+		border-radius: 50%;
+		background-color: $turquoise;
+	}
+}
 
 
 

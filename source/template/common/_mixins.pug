@@ -69,7 +69,7 @@ mixin slider-left(description_text, technologies_text, href,active)
 mixin navigation(className,items)
 	nav(class=className)
 		ul(class=className + "__list")
-			- var items = items || {"Мои работы": "works.html", "Обо мне": "about.html","Блог": "blog.html", "Авторизация":"welcome.html"}
+			- var items = items || {"Мои работы": "works.html", "Обо мне": "about.html","Блог": "blog.html", "Авторизация":"index.html"}
 			each href, nav in items
 				li(class=className + "__item")
 					a(href=href class=className + "__link")= nav

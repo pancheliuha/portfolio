@@ -35,6 +35,7 @@
 
 	@include tablets() {
 		display: inline-block;
+		padding: 0;
 	}
 
 	@include phones() {
@@ -45,6 +46,10 @@
 .footer__nav__item {
 	float: left;
 	margin:0 rem(17px);
+
+	@include phones() {
+		margin:0 rem(9px);;
+	}
 }
 
 .footer__nav__link {
