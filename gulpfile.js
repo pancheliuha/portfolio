@@ -37,6 +37,7 @@
             'sprite:svg'
         ),
         $.gulp.parallel(
+            'css:min',
             'watch',
             'serve'
         )
