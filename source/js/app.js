@@ -2,8 +2,8 @@
     "use strict";
 
         var mainMenu = require('./modules/main-menu')()(),
-            paralaxMain = require('./modules/paralax-main')(),
             scrollEvents = require('./modules/scroll-events')(),
+            paralaxMain = require('./modules/paralax-main')(),
             anchors = require('./modules/anchors')(),
             preloader = require('./modules/preloader'),
             slider = require('./modules/slider')(),
@@ -53,7 +53,20 @@
             });
         }
 
+         /********blog-aside-move************/
 
+         if ($('.articles-links').length) {
+             var asideMover = $('div.articles-links:before'),
+                 asideLinks = $('div.articles-links');
+
+             asideLinks.click(function () {
+                 $(this).toggleClass('active');
+             })
+
+
+
+
+         }
 
 
     preloader();

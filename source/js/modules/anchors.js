@@ -15,11 +15,11 @@ module.exports = function () {
 
         function anchorDown(e) {
             e.preventDefault();
-            $("body, html").animate({scrollTop: anchorTopValueResize || anchorTopValue}, 650);
+            $("body, html").animate({scrollTop: anchorTopValueResize || anchorTopValue}, 1000);
         }
 
         function anchorUp(e) {
-            $("body, html").animate({scrollTop: 0}, 650);
+            $("body, html").animate({scrollTop: 0}, 1200);
         }
 
         /********aside-blog anchor function********/

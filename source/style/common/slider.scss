@@ -291,7 +291,7 @@
 
 	}
 
-
+	//arrows
 	&-left::before {
 		content: "\f078";
 		text-shadow: 0 -4px 9px #000;
@@ -306,13 +306,16 @@
 		font-family: "FontAwesome";
 		width: 100%;
 		height: 100%;
-		vertical-align: middle;
 		position: absolute;
 		top: 40%;
 		left: 0;
 		right: 0;
 		color: white;
 		transition: all .1s .3s;
+
+		@include phones() {
+			font-size: 30px;
+		}
 	}
 
 	&-left:hover::before {

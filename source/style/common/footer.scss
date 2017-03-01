@@ -124,4 +124,8 @@
 
 .footer__static {
 	position: static;
+
+	@include tablets() {
+		z-index: 4;
+	}
 }

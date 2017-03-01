@@ -41,9 +41,53 @@
 	height: 100vh;
 	width: 30%;
 	padding-top: rem(70px);
+	z-index: 4;
 	&.fixed {
 		position: fixed;
 		top: 0;
+	}
+	
+	@include tablets() {
+		width: 80%;
+		position: fixed;
+		height: 100%;
+		top: 0;
+		bottom: 0;
+		background-color: #00bfa5;
+		left: -80%;
+		box-shadow: 2px 0 5px #ccc;
+		transition: left .8s;
+
+		&::before {
+			content:'\f061';
+			font-family: "FontAwesome";
+			line-height: 60px;
+			text-align: right;
+			padding-right: 5px;
+			font-size: 18px;
+			color: #fff;
+			width: 60px;
+			height: 60px;
+			background-color: #00bfa5;
+			border-radius: 50%;
+			position: absolute;
+			top: 42%;
+			right: -20px;
+			z-index: -1;
+			pointer-events: all;
+			cursor: pointer;
+		}
+
+		//article-links is shown
+		&.active {
+			left: 0;
+			transition: left .8s;
+
+			//change arrow
+			&::before {
+				content:'\f060';
+			}
+		}
 	}
 }
 
@@ -64,6 +108,8 @@
 .aside__link {
 	padding: 10px 0;
 	display: block;
+	font-size: 17px;
+	font-family: 'roboto_medium', sans-serif;
 	color: #455a64;
 	text-decoration: none;
 	border-sizing: border-box;
@@ -75,6 +121,17 @@
 		border-color: rgba(#00bfa5, 1);
 		color: $turquoise;
 		transition: all .3s;
+
+		@include tablets() {
+			color: #fff;
+			font-weight: 200;
+		}
+	}
+
+	@include tablets() {
+		color: #27383a;
+		font-weight: 200;
+		text-shadow: 0 1px 1px #ccc;
 	}
 
 }
@@ -84,18 +141,110 @@
 	float: right;
 	padding-top: rem(70px);
 	box-sizing: border-box;
+	padding-right: 10px;
+
 	
 	p {
 		text-align: left;
 	}
+
+	@include tablets() {
+		width: 100%;
+		padding: 0 20px;
+	}
 }
 
+//style articles
 .article{
 	box-sizing: border-box;
 	padding:rem(20px) 0 ;
+	border-bottom: 3px solid rgba(#373e42, .3);
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	&__content {
+		@extend %clearfix;
+	}
 
 	&__head {
+		font-family: 'bernier_regular', sans-serif;
+		font-size: rem(35px);
+		font-weight: 400;
 		margin: rem(20px) 0;
+		color: $Hcolor;
+		text-align: left;
+
+		@include tablets() {
+			font-size: rem(30px);
+		}
+
+		@include phones() {
+			font-size: 21px;
+		}
+	}
+
+	&__date {
+		color: $turquoise;
+		font-size: 16px;
+		text-align: left;
+		font-weight: 200;
+
+		@include phones() {
+			font-size: 14px;
+		}
+	}
+
+	p, li {
+		color: #121212;
+		font-size: 16px;
+		line-height: 21px;
+		text-align: left;
+		@include phones() {
+			font-size: 14px;
+		}
+	}
+
+	li {
+		margin: 16px 0;
+	}
+
+	a {
+		text-decoration: none;
+		color: #ccc;
+		float: right;
+	}
+
+	h4 {
+		color: #121212;
+		font-size: 20px;
+		font-family: 'roboto_medium', sans-serif;
+		text-align: left;
+		font-weight: 200;
+
+		@include phones() {
+			font-size: 16px;
+		}
+	}
+
+	h5 {
+		@extend h4;
+		font-size: 18px;
+
+		@include phones() {
+			font-size: 15px;
+		}
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
 	}
 }
 

@@ -5,7 +5,6 @@ module.exports = function () {
     $(window).scroll(function () {
 
         var wScroll = $(window).scrollTop();
-        console.log('wScroll',wScroll);
         /**********parallax-vars**********/
         var scrollLayer = $('.parallax__scroll').find('.layer'),
             user = $('.header__content'),
@@ -29,7 +28,7 @@ module.exports = function () {
             }
 
             scrollLayer.map(function (key, layer) {
-                var strAm = wScroll/(50 - key*3.5);
+                var strAm = wScroll/(50 - key*3.4);
                 slide($(layer), strAm);
             });
 
@@ -71,7 +70,6 @@ module.exports = function () {
             } else {
                 artLink.removeClass('active');
             }
-                console.log('artOffsetTop' ,artOffsetTop, 'artOffsetBottom' ,artOffsetBottom);
         });
 
 
@@ -86,12 +84,10 @@ module.exports = function () {
                 //offsets
                 talksHeaderOffset = talksHeader.offset().top,
                 talksItemsOffset = talksItems.offset().top;
-                console.log(talksHeaderOffset, talksItemsOffset);
 
             animateScroll(talksHeader, talksHeaderOffset, "fadeInFromBottom");
             animateScroll(talksItems, talksItemsOffset, "fadeInFromBottom");
         }
-        console.log('!!!!!!', ($(window).height()));
         function animateScroll(block, offset, animationName) {
             if (wScroll > (offset - $(window).height())) {
                 block.addClass(animationName);

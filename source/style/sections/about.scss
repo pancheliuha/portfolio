@@ -102,6 +102,7 @@
 
 	@include tablets() {
 		width: 80%;
+		font-size: 16px;
 		display: inline-block;
 		margin: 0;
 	}
@@ -109,7 +110,7 @@
 		width: 90%;
 		padding-right: 0;
 		padding-left: 0;
-		line-height: rem(20px);
+		line-height: 20px;
 	}
 
 }
