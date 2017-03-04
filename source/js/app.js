@@ -37,7 +37,6 @@
                 blurSection = $('.talks'),
                 blurPosTop = blurSection.offset().top - blur.offset().top,
                 blurPosLeft = blurSection.offset().left - blur.offset().left;
-                console.log(blurSection.offset().top, '!===!',blur.offset().top, '&&',blurPosTop );
             blur.css({
                 'background-position' : blurPosLeft + 'px' + ' ' + blurPosTop + 'px'
             });

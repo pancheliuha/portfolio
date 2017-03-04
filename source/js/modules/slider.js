@@ -27,12 +27,19 @@ module.exports = function () {
         opacityFull = {'opacity' : '1'};
 
 
+
     /********set navigation variables end********/
 
     NavRight.on('click',navigation);
     NavLeft.on('click',navigation);
 
     function navigation(e) {
+
+        var descriptionInner = moveItems(e);
+        animateLetters(descriptionInner);
+    }
+
+    function moveItems(e) {
 
         if (e.currentTarget.className == "slider__nav-item slider__nav-item_left") {
             /********inc counters********/
@@ -94,5 +101,84 @@ module.exports = function () {
         showActiveItems(previousItemRequire, previousItemActive, top0, topUnder);
         showActiveItems(descriptionItemRequire, descriptionItemActive, opacityFull, opacityNone);
         showActiveItems(slideshowItemRequire, slideshowItemActive, opacityFull, opacityNone);
+
+        return descriptionItemRequire;
+    }
+    
+    /**********animate letters in description*********/
+
+
+    function animateLetters(descIn) {
+
+        //animations letters vars
+        var descriptionInner = descIn,
+            descrBlock = descriptionInner.find('.slider__description-text'),
+            technologiesBlock = descriptionInner.find('.slider__technologies'),
+            stringDescr = descrBlock.text().trim(),
+            stringTechnologies = technologiesBlock.text().trim(),
+            stringDescrArray = stringDescr.split(''),
+            stringTechnologiesArray = stringTechnologies.split(''),
+            wordDescr = '',
+            wordTechnologies = '';
+
+
+        function animateString(strArr, word, block) {
+            block.html("");
+            //wrap letters in span
+
+            strArr.forEach(function (letter, i) {
+
+                var text = '<span class="letter-span">' + letter + '</span>';
+
+                if (i == 0) {
+                    text = '<span class="word-span">' + text;
+                }
+
+                if (letter == " " || letter == "&nbsp;") {
+                    text = '</span><span class="letter-span_space"> </span><span class="word-span">';
+                }
+
+                if (i == strArr.length - 1) {
+                    text = text + '</span>';
+                }
+
+                word += text;
+            });
+
+            block.html(word);
+
+
+         //   console.log('block.html()',block.children('.word-span').length);
+
+            var letter = block.find('.letter-span'),
+                counter = 0,
+                timer,
+                duration = 800 / strArr.length;
+
+
+            //show and animate every letter
+            function showLetters() {
+                var currenLetter = letter.eq(counter);
+
+                currenLetter.addClass('active');
+
+                counter++;
+                if (strArr.length == counter) {
+                    return;
+                }
+
+                if (typeof timer != 'undefined') {
+                    clearTimeout(timer);
+                }
+
+                timer = setTimeout(showLetters, duration);
+            }
+
+            showLetters();
+
+        }
+
+        animateString(stringDescrArray, wordDescr, descrBlock);
+        animateString(stringTechnologiesArray, wordTechnologies, technologiesBlock);
     }
 }

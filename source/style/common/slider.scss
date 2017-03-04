@@ -83,12 +83,25 @@
 	font-size: rem(35px);
 	color: #455a64;
 
-
 	@include phones() {
 		font-size: rem(28px);
 		margin: 10px 0;
 	}
+}
 
+.letter-span {
+	opacity: 0;
+	display: inline-block;
+
+	&.active {
+		opacity: 1;
+		animation: zoomInDown .6s;
+	}
+}
+
+.word-span {
+	display: inline-block;
+	margin: 0 2px;
 }
 
 .slider__technologies {

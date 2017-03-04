@@ -28,7 +28,7 @@ module.exports = function () {
             }
 
             scrollLayer.map(function (key, layer) {
-                var strAm = wScroll/(50 - key*3.4);
+                var strAm = wScroll/(45 - key*3.4);
                 slide($(layer), strAm);
             });
 
@@ -88,8 +88,10 @@ module.exports = function () {
             animateScroll(talksHeader, talksHeaderOffset, "fadeInFromBottom");
             animateScroll(talksItems, talksItemsOffset, "fadeInFromBottom");
         }
+
         function animateScroll(block, offset, animationName) {
-            if (wScroll > (offset - $(window).height())) {
+            
+            if (wScroll > (offset - $(window).height() - 200)) {
                 block.addClass(animationName);
             }
         }

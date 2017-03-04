@@ -1,6 +1,8 @@
 module.exports = function () {
     if($('.skill__wrap').length) {
+        
         $(window).scroll(function () {
+         
             var skillsWrap = $('.skill__wrap'),
                 skillList = $('.skill__list'),
                 scroll = $(window).scrollTop();
@@ -18,11 +20,11 @@ module.exports = function () {
                         delayTime = 0;
 
                     var animateCircle = function () {
+                        
                         if (i == skillItems.length - 1) return;
                         ++i;
                         delayTime += 200;
                         var animatePercent = 314 - ($(skillItems[i]).data("percent")/100)*314;
-                        console.log(animatePercent);
 
                         $this.children('.skill__item')
                             .delay(delayTime)
