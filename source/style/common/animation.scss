@@ -27,6 +27,16 @@
     }
 }
 
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
 @keyframes fadeInFromBottom {
     from {
         opacity: 0;
@@ -81,4 +91,94 @@
     }
 }
 
+@keyframes flipInY {
+    from {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
 
+    40% {
+        transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+        animation-timing-function: ease-in;
+    }
+
+    60% {
+        transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    }
+
+    to {
+        transform: perspective(400px);
+    }
+}
+
+
+@keyframes hinge {
+    0% {
+        transform-origin: top right;
+        animation-timing-function: ease-in-out;
+    }
+
+    20% {
+        transform: rotate3d(0, 0, 1, -105deg);
+        transform-origin: top right;
+        animation-timing-function: ease-in-out;
+    }
+
+    40% {
+        transform: rotate3d(0, 0, 1, -25deg);
+        transform-origin: top right;
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+    }
+
+    60% {
+        transform: rotate3d(0, 0, 1, -95deg);
+        transform-origin: top right;
+        animation-timing-function: ease-in-out;
+    }
+
+    75% {
+        transform: rotate3d(0, 0, 1, -80deg);
+        transform-origin: top right;
+        animation-timing-function: ease-in-out;
+    }
+
+    90% {
+        transform: rotate3d(0, 0, 1, -91deg);
+        transform-origin: top right;
+        animation-timing-function: ease-in-out;
+    }
+
+    to {
+        transform: translate3d(0, 700px, 0);
+    }
+}
+
+@keyframes rollIn {
+    from {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes rollOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    }
+}

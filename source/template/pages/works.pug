@@ -50,14 +50,17 @@ block content
 					.feedback__background-blur-wrapper
 						.feedback__background-blur
 						.feedback__wrapper
-							form(action="mailto:vutya2806@gmail.com" enctype="text/plain" method="GET" class="feedback")
+							form(class="feedback" id="formFeedback" novalidate)
 								+text-with-lines('связаться со мной', 'text-with-lines_feedback')
-								input(type="text" placeholder="Имя" value="").feedback__name
-								input(type="email" placeholder="Email" value="").feedback__email
-								textarea(name="message", cols="15", rows="6" placeholder="Ваше сообщение" value="").feedback__message
+								input(type="text" placeholder="Имя" value="" name="name" id="name").feedback__name
+								.error-tooltip.hide Ваше имья должно быть дольше 2х символов без знаков
+								input(type="email" placeholder="Email" value="" name="email" id="email").feedback__email
+								.error-tooltip.hide Email должен быть в виде example@example.ex
+								textarea(name="message", cols="15", rows="6" placeholder="Ваше сообщение (больше 5 символов)" value="" id="message").feedback__message
+								.error-tooltip.hide Длина сообщения должна превышать 5 символов
 								.feedback__buttons
-									input(type="submit" value="Отправить").feedback__submit
-									input(type="reset" value="Очистить").feedback__reset
+									input(type="submit" value="Отправить" id="send").feedback__submit
+									input(type="reset" value="Очистить" id="reset").feedback__reset
 
 						
 

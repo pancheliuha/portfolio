@@ -121,11 +121,13 @@ module.exports = function () {
             wordDescr = '',
             wordTechnologies = '';
 
+        animateString(stringDescrArray, wordDescr, descrBlock);
+        animateString(stringTechnologiesArray, wordTechnologies, technologiesBlock);
 
         function animateString(strArr, word, block) {
-            block.html("");
-            //wrap letters in span
+             block.html("");
 
+             //wrap letters in span
             strArr.forEach(function (letter, i) {
 
                 var text = '<span class="letter-span">' + letter + '</span>';
@@ -148,7 +150,6 @@ module.exports = function () {
             block.html(word);
 
 
-         //   console.log('block.html()',block.children('.word-span').length);
 
             var letter = block.find('.letter-span'),
                 counter = 0,
@@ -178,7 +179,5 @@ module.exports = function () {
 
         }
 
-        animateString(stringDescrArray, wordDescr, descrBlock);
-        animateString(stringTechnologiesArray, wordTechnologies, technologiesBlock);
     }
 }

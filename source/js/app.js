@@ -8,7 +8,8 @@
             preloader = require('./modules/preloader'),
             slider = require('./modules/slider')(),
             skills = require('./modules/skills')(),
-            map = require('./modules/map')();
+            map = require('./modules/map')(),
+            formValid = require('./modules/form-validation')();
 
         /********welcome-flip************/
 
