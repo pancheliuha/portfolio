@@ -411,7 +411,7 @@ textarea {
 		top: -3px; 
 		left: -25px;
   		font-size: 23px;
-  		font-family: FontAwesome;
+  		font-family: "FontAwesome";
 	}
 
 	&::before {
@@ -529,6 +529,14 @@ textarea {
 		}
 
 			&__link {
+				display: block;
+				text-align: center;
+				height: 100%;
+				text-decoration: none;
+				color:#fff;
+			}
+
+			&__submit {
 				display: block;
 				text-align: center;
 				height: 100%;

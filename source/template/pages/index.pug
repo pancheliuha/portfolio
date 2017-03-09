@@ -34,14 +34,14 @@ block content
 						.about-card__back
 							.about-card__back__content
 								+text-with-lines('Авторизуйтесь', 'text-with-lines_auth')
-								form.about-card__form
+								form.about-card__form#about-card__form
 									label.about-card__input-wrapper
-										input(type="text" placeholder="Логин" value="").about-card__login
+										input(type="text" placeholder="Логин" value="" name="login").about-card__login
 										span.fa.fa-user
 									label.about-card__input-wrapper
-										input(type="password" placeholder="Пароль" value="").about-card__pwd
+										input(type="password" placeholder="Пароль" value="" name="password").about-card__pwd
 										span.fa.fa-key
-									input(type="checkbox" id="auth-form__checkbox" value="").about-card__checkbox
+									input(type="checkbox" id="auth-form__checkbox" value="" name="human").about-card__checkbox
 									label(for="auth-form__checkbox").about-card__label__checkbox
 										| Я человек
 									p.about-card__question Вы точно не робот?
@@ -59,5 +59,5 @@ block content
 
 			footer.footer-min
 				p.footer__content
-					| @Victor Pancheliuha
+					| @Victor Pancheliuha | 2017
 			include ../common/preloader

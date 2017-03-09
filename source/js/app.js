@@ -22,13 +22,18 @@
 
         });
 
-        $('.about-card__back__nav__link').on('click', function(e) {
+        $('.about-card__back__nav__item:first-child').on('click', function(e) {
             e.preventDefault();
             $('.flip-container').toggleClass('flipped');
             $('.welcome-header__button').fadeIn(300);
         });
 
 
+        /********link-submit************/
+        $('.about-card__back__nav__item:last-child').on('click', function(e) {
+            e.preventDefault();
+            $('#about-card__form').submit();
+        });
         /********blur-on-form************/
         
         function setBlur() {

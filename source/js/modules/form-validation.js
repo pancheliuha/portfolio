@@ -144,6 +144,8 @@ module.exports = function () {
 
     }
 
+
+    //popup function
     function showPopup(popupText) {
         var overlay = $('.popup__overlay'),
             popupText = popupText,

@@ -4,8 +4,8 @@ module.exports = function () {
 
         /********set map parameters*********/
         function initializeMap() {
-            var latitude = 50.453927,
-                longitude = 30.440409,
+            var latitude = 50.454700,
+                longitude = 30.450409,
                 mapZoom = 15,
                 mainColor = '#228475',
                 white = '#ffffff',
@@ -148,7 +148,8 @@ module.exports = function () {
         //move map to marker
         $('.icon_map_marker').parents('.contacts__link').on('click', function (e) {
             e.preventDefault();
-            map.panTo({lat: 50.453927, lng: 30.440409})
+            map.panTo({lat: 50.454700, lng: 30.450409});
+            map.setZoom(15);
         });
     }
 }
