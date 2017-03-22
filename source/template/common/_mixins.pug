@@ -56,13 +56,13 @@ mixin skill(techChapter, skillNames)
 						span.circle__text
 							| #{skill}
 
-mixin slider-left(description_text, technologies_text, href,active)
+mixin slider-left(description_text, technologies_text, href, linktext, active)
 	- var active = active || ""
 		div(class="slider-inner" + " " + active)
 			.slider__description
 				h4.slider__description-text #{description_text}
 				p.slider__technologies #{technologies_text}
-				a(href=href class="slider__link" target="_blank") Перейти на сайт
+				a(href=href class="slider__link" target="_blank") #{linktext}
 
 
 

@@ -5,25 +5,25 @@ section(id="mainSection").slider-wrapper
 			.slider__project-image-wrapper
 				.slider__project-image
 					.slider__item.slideshow
-						img(src="./assets/img/works/cat1.jpg", alt="port1").project__img
+						img(src="./assets/img/works/tattoo.png", alt="tattoo").project__img
 					.slider__item.slideshow.active
-						img(src="./assets/img/works/port.png", alt="port2").project__img
+						img(src="./assets/img/works/port.png", alt="portfolio").project__img
 					.slider__item.slideshow
 						img(src="./assets/img/works/cat2.jpg", alt="port3").project__img
 					.slider__item.slideshow
 						img(src="./assets/img/works/cat3.jpg", alt="port3").project__img
-			+slider-left('Junior Cat', 'html, css', '#')
-			+slider-left('Личный Сайт - Портфолио', 'pug, sass, jquery, svg, git, gulp 4', 'https://github.com/pancheliuha/portfolio',"active")
-			+slider-left('Middle Cat', 'pug, sass, vanilla JS', '#')
-			+slider-left('Senior Cat', 'Angular 2, TypeScript, sass', '#')
+			+slider-left('Tattoo - landing page (markup)', 'bootstrap, flexbox, sass, html, gulp 4', 'assets/works/tattooProject/index.html', 'Посмотреть сайт')
+			+slider-left('Личный Сайт - Портфолио', 'pug, sass, jquery, svg, git, gulp 4', 'https://github.com/pancheliuha/portfolio', 'Посмотреть проэкт на github', "active")
+			+slider-left('Middle Cat', 'pug, sass, vanilla JS', '#', 'Посмотреть сайт')
+			+slider-left('Senior Cat', 'Angular 2, TypeScript, sass', '#', 'Посмотреть сайт')
 		.slider__second-part
 			.slider__nav
 				.slider__nav-item-wrapper
 					button.slider__nav-item.slider__nav-item_left
 						.slider__item.left
-							img(src="./assets/img/works/cat1.jpg", alt="port1").project__img
+							img(src="./assets/img/works/tattoo.png", alt="tattoo").project__img
 						.slider__item.left
-							img(src="./assets/img/works/port.png", alt="port2").project__img
+							img(src="./assets/img/works/port.png", alt="portfolio").project__img
 						.slider__item.left.active
 							img(src="./assets/img/works/cat2.jpg", alt="port3").project__img
 						.slider__item.left
@@ -33,9 +33,9 @@ section(id="mainSection").slider-wrapper
 	
 					button.slider__nav-item.slider__nav-item_right
 						.slider__item.right.active
-							img(src="./assets/img/works/cat1.jpg", alt="port1").project__img
+							img(src="./assets/img/works/tattoo.png", alt="tattoo").project__img
 						.slider__item.right
-							img(src="./assets/img/works/port.png", alt="port2").project__img
+							img(src="./assets/img/works/port.png", alt="portfolio").project__img
 						.slider__item.right
 							img(src="./assets/img/works/cat2.jpg", alt="port3").project__img
 						.slider__item.right

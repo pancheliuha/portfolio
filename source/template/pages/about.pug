@@ -5,7 +5,7 @@ block variables
 	- var triangle_mod= ''
 	- var header_min= '' 
 	- var header= 'header'
-	- var frontend= {'HTML5&CSS3':'92','Pug': '85','SASS':'83','JavaScript':'70', 'jQuery':'75', 'Angular 2':'10'}
+	- var frontend= {'HTML5&CSS3':'92','Pug': '85','SASS':'83','JavaScript':'70','Bootstrap':'59', 'jQuery':'75', 'Angular 2':'10'}
 	- var workflow= {'GIT':'40','Gulp':'70','Bower':'30', 'npm':'60'}
 	- var footer__static= ''
 
@@ -28,10 +28,10 @@ block content
 						+text-with-lines('Кто я', 'text-with-lines_about__info')
 
 						p.biography__info
-							| Живу в городе Киев, и являюсь студентом 5 курса НТУУ "Киевский Политехнический Институт". Учусь на спeциальности "Компютерные науки", и никапли не жалею об выборе специальности.
+							| Живу в городе Киев, и являюсь студентом 5 курса НТУУ "КПИ". Учусь на спeциальности "Компютерные науки", и никапли не жалею об выборе специальности.
 
 						p.biography__info
-							| Люблю все что связано с программированием, в частности мир веб-разработки. Очень нравится делать красивые и интересные проэкты. Технологии развиваются очень быстро, и хочется применить и выучить много нового. Сейчас активно изучаю Angular 2 и паралельно Node.js.
+							| Люблю все что связано с программированием, в частности мир веб-разработки. Очень нравится делать красивые и интересные проэкты. Технологии развиваются очень быстро, и хочется применить и выучить много нового. По крайней мере, стараюсь уделять этому определенное количество времени. Сейчас активно изучаю Angular 2 и паралельно Node.js.
 
 						p.biography__info
 							| В свободное времья занимаюсь спортом, хожу в тренажерный зал, играю в теннис.
@@ -45,7 +45,7 @@ block content
 							h3.skills__description-head Вам полезен
 						.skills__content
 							p.skills__description
-								| Больше всего меня привлекает Frontend разработка, так как люблю видеть визуально проделанную работу. Больше всего люблю JS, однако могу сверстать все что можно сверстать =). Далее вы можете видеть основные технологии, с которыми я работаю.
+								| Меня привлекает Frontend разработка, так как люблю видеть визуально проделанную работу. Больше всего люблю JS, однако могу сверстать все что можно сверстать =). Далее вы можете видеть основные технологии, с которыми я работаю.
 						+skill('Frontend', frontend)
 						+skill('Workflow', workflow)
 			section.map
@@ -57,9 +57,9 @@ block content
 						+text-with-lines('Контакты', 'text-with-lines_contacts')
 					ul.contacts__list
 						li.contacts__item
-							a(href="skype:vitya2806?call").contacts__link
+							a(href="skype:pancheluha.victor@gmail.com?call").contacts__link
 								+icon('skype', 'contacts_icon')
-								p.contact__data vitya2806
+								p.contact__data pancheluha.victor@gmail.com
 						li.contacts__item
 							a(href="mailto:pancheluha.victor@gmail.com").contacts__link
 								+icon('envelope', 'contacts_icon')
